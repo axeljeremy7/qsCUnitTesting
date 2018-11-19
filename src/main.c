@@ -40,7 +40,7 @@ int main(int argc, char const *argv[])
     int numRoots;
     while(scanf("%s %s %s", a_array, b_array, c_array) == 3){
         printf("==> %s %s %s\n", a_array, b_array ,c_array);
-        fprintf(fp ,"==> %s %s %s\n", a_array, b_array ,c_array);
+        fprintf(fp ,"MAIN ==> %s %s %s\n", a_array, b_array ,c_array);
         if (validation_floats(a_array, b_array, c_array, &a, &b, &c, fp) == 1)
         {
             get_precision(a_array, b_array, c_array, &a, &b, &c, fp);
