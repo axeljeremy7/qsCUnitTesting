@@ -34,6 +34,9 @@ run:
 run2:
 	./output 2 < test2.in > out2.out
 
+run3:
+	./output 3 
+
 .PHONY : clean
 clean:
 	rm *.o output

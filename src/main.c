@@ -12,9 +12,13 @@ int main(int argc, char const *argv[])
     {
         fp = fopen("logs1.txt", "w");
     }
-    else
+    else if (atoi(argv[1]) == 2)
     {
         fp = fopen("logs2.txt", "w");
+    }
+    else 
+    {
+        fp = fopen("logs3.txt", "w");
     }
     char a_array[1024];
     char b_array[1024];
@@ -38,14 +42,16 @@ int main(int argc, char const *argv[])
     result.c = c;
     double d;
     int numRoots;
-    while(scanf("%s %s %s", a_array, b_array, c_array) == 3){
+    while(scanf("%s %s %s", a_array, b_array, c_array) == 3)
+    {
         printf("==> %s %s %s\n", a_array, b_array ,c_array);
         fprintf(fp ,"MAIN ==> %s %s %s\n", a_array, b_array ,c_array);
         if (validation_floats(a_array, b_array, c_array, &a, &b, &c, fp) == 1)
         {
             get_precision(a_array, b_array, c_array, &a, &b, &c, fp);
             add_numbers_to_result(&result, &a, &b, &c, fp, a_array, b_array, c_array);
-            if (check_is_quadratic(result.a.f_number, fp) == 1){
+            if (check_is_quadratic(result.a.f_number, fp) == 1)
+            {
                 d = discrim(result.a.f_number, result.b.f_number, result.c.f_number);
                 numRoots = check_discrim(d);
                 if (numRoots == 0)
@@ -66,9 +72,10 @@ int main(int argc, char const *argv[])
                     printf("Two real double roots found:");
                     printf("\n\tRoots at: %lf & %lf\n\n", result.root_x1, result.root_x1);
                 }
-            }
-            
-        }else{
+            }   
+        }
+        else
+        {
              printf("\tINVALID\n\n");
         }
     }

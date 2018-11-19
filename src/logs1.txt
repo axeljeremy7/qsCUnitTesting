@@ -239,7 +239,8 @@ Error Line 63: The input for a is -9n, which is invalid.
 Error Line 63: The input for a is -9n, which is invalid.
 LOG LINE 68: The integer_count plus one 3
 LOG LINE 74: The decimals_count with or without break 0
-LOG LINE 95: The return_value 2
+Log Line 88: The input for c is -9n which is valid.
+LOG LINE 95: The return_value 1
 MAIN ==> nan nan nan
 LINE 49: The float of a is nan len:3
 Error Line 63: The input for a is nan, which is invalid.
@@ -277,7 +278,8 @@ Error Line 63: The input for a is -inf, which is invalid.
 Error Line 63: The input for a is -inf, which is invalid.
 LOG LINE 68: The integer_count plus one 4
 LOG LINE 74: The decimals_count with or without break 0
-LOG LINE 95: The return_value 2
+Error Line 92: The input for b is -inf which is not normal
+LOG LINE 95: The return_value 1
 LINE 49: The float of c is inf len:4
 Error Line 63: The input for a is +inf, which is invalid.
 Error Line 63: The input for a is +inf, which is invalid.
@@ -318,3 +320,63 @@ LOG LINE 68: The integer_count plus one 1
 Error Line 74: The input for a is .09m, which is invalid.
 LOG LINE 74: The decimals_count with or without break 1
 LOG LINE 95: The return_value 2
+MAIN ==> 1 -9 14
+LINE 49: The float of a is 1.000000 len:1
+LOG LINE 68: The integer_count plus one 1
+LOG LINE 74: The decimals_count with or without break 0
+Log Line 88: The input for a is 1 which is valid.
+LOG LINE 95: The return_value 1
+LINE 49: The float of b is -9.000000 len:2
+Error Line 63: The input for a is -9, which is invalid.
+LOG LINE 68: The integer_count plus one 2
+LOG LINE 74: The decimals_count with or without break 0
+Log Line 88: The input for b is -9 which is valid.
+LOG LINE 95: The return_value 1
+LINE 49: The float of c is 14.000000 len:2
+LOG LINE 68: The integer_count plus one 2
+LOG LINE 74: The decimals_count with or without break 0
+Log Line 88: The input for c is 14 which is valid.
+LOG LINE 95: The return_value 1
+Log LINE 107: 1 1 1
+Log Line 11: 1 strlen(array) => 1
+Log Line 34: integer_part_len => 0, 0
+Log Line 35:  decimals_part_len => 0, 0
+Log Line 11: -9 strlen(array) => 2
+Log Line 34: integer_part_len => 1, 1
+Log Line 35:  decimals_part_len => 0, 0
+Log Line 11: 14 strlen(array) => 2
+Log Line 34: integer_part_len => 1, 1
+Log Line 35:  decimals_part_len => 0, 0
+Log Line 119: For a => String: 1 float: 1 double: 1 diff: 0 p: 0
+Log Line 120: For b => String: -9 float: -9.000000 double: -9 diff: 0 p: 0
+Log Line 121: For c => String: 14 float: 14 double: 14 diff: 0 p: 0
+MAIN ==> 1.0 -9.0 14.0
+LINE 49: The float of a is 1.000000 len:3
+LOG LINE 68: The integer_count plus one 2
+LOG LINE 74: The decimals_count with or without break 0
+Log Line 88: The input for a is 1.0 which is valid.
+LOG LINE 95: The return_value 1
+LINE 49: The float of b is -9.000000 len:4
+Error Line 63: The input for a is -9.0, which is invalid.
+LOG LINE 68: The integer_count plus one 3
+LOG LINE 74: The decimals_count with or without break 0
+Log Line 88: The input for b is -9.0 which is valid.
+LOG LINE 95: The return_value 1
+LINE 49: The float of c is 14.000000 len:4
+LOG LINE 68: The integer_count plus one 3
+LOG LINE 74: The decimals_count with or without break 0
+Log Line 88: The input for c is 14.0 which is valid.
+LOG LINE 95: The return_value 1
+Log LINE 107: 1 1 1
+Log Line 11: 1.0 strlen(array) => 3
+Log Line 34: integer_part_len => 1, 1
+Log Line 35:  decimals_part_len => 1, 1
+Log Line 11: -9.0 strlen(array) => 4
+Log Line 34: integer_part_len => 2, 2
+Log Line 35:  decimals_part_len => 1, 1
+Log Line 11: 14.0 strlen(array) => 4
+Log Line 34: integer_part_len => 2, 2
+Log Line 35:  decimals_part_len => 1, 1
+Log Line 119: For a => String: 1.0 float: 1.0 double: 1.0 diff: 0.0 p: 1
+Log Line 120: For b => String: -9.0 float: -9.000000 double: -9.0 diff: 0.0 p: 1
+Log Line 121: For c => String: 14.0 float: 14.0 double: 14.0 diff: 0.0 p: 1
