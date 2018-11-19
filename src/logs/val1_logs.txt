@@ -410,22 +410,38 @@ Log Line 153: For a => String: 9 float: 9 double: 9 diff: 0 p: 0
 Log Line 159: For b => String: 12 float: 12.000000 double: 12 diff: 0 p: 0
 Log Line 165: For c => String: 4 float: 4 double: 4 diff: 0 p: 0
 
-MAIN ==> -9 -12 -4
-LINE 65: The float of a is -9.000000 len:2
-Error Line 79: The input for a is -9, which is invalid.
-LOG LINE 85: The integer_count plus one 2
-LOG LINE 98: The decimals_count with or without break 0
-LOG LINE 119: The return_value 2
-LINE 65: The float of b is -12.000000 len:3
-Error Line 79: The input for a is -12, which is invalid.
+MAIN ==> -9.0 -12.0 -4.0
+LINE 65: The float of a is -9.000000 len:4
+Error Line 79: The input for a is -9.0, which is invalid.
 LOG LINE 85: The integer_count plus one 3
 LOG LINE 98: The decimals_count with or without break 0
-LOG LINE 119: The return_value 2
-LINE 65: The float of c is -4.000000 len:2
-Error Line 79: The input for a is -4, which is invalid.
-LOG LINE 85: The integer_count plus one 2
+Log Line 108: The input for a is -9.0 which is valid.
+LOG LINE 119: The return_value 1
+LINE 65: The float of b is -12.000000 len:5
+Error Line 79: The input for a is -12.0, which is invalid.
+LOG LINE 85: The integer_count plus one 4
 LOG LINE 98: The decimals_count with or without break 0
-LOG LINE 119: The return_value 2
+Log Line 108: The input for b is -12.0 which is valid.
+LOG LINE 119: The return_value 1
+LINE 65: The float of c is -4.000000 len:4
+Error Line 79: The input for a is -4.0, which is invalid.
+LOG LINE 85: The integer_count plus one 3
+LOG LINE 98: The decimals_count with or without break 0
+Log Line 108: The input for c is -4.0 which is valid.
+LOG LINE 119: The return_value 1
+Log LINE 135: 1 1 1
+Log Line 14: -9.0 strlen(array) => 4
+Log Line 39: integer_part_len => 2, 2
+Log Line 41:  decimals_part_len => 1, 1
+Log Line 14: -12.0 strlen(array) => 5
+Log Line 39: integer_part_len => 3, 3
+Log Line 41:  decimals_part_len => 1, 1
+Log Line 14: -4.0 strlen(array) => 4
+Log Line 39: integer_part_len => 2, 2
+Log Line 41:  decimals_part_len => 1, 1
+Log Line 153: For a => String: -9.0 float: -9.0 double: -9.0 diff: 0.0 p: 1
+Log Line 159: For b => String: -12.0 float: -12.000000 double: -12.0 diff: 0.0 p: 1
+Log Line 165: For c => String: -4.0 float: -4.0 double: -4.0 diff: 0.0 p: 1
 
 MAIN ==> 3.0000000 4.0000000 2.0000000
 LINE 65: The float of a is 3.000000 len:9
