@@ -5,7 +5,7 @@ CFLAGS = -std=c99 -Wall -Werror -pedantic
 LDLIBS = -lm
 
 docker:
-	docker run -it -v "/Users/axeljeremy/Google Drive/CS-4900/QuadSolver":/quadsolver/ ubuntu:gcc
+	docker run -it -v "/Users/axeljeremy/Google Drive/CS-4900/QuadSolver/src":/src/ ubuntu:gcc
 
 main.o: main.h
 	${CC} -c ${CFLAGS} main.c ${LDLIBS}
