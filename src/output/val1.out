@@ -41,7 +41,8 @@ Two real double roots found:
 	INVALID
 
 ==> 1 -9 14
-	INVALID
+Two real double roots found:
+	Roots at: 2.000000 & 7.000000
 
 ==> 1.0 -9.0 14.0
 Two real double roots found:
@@ -59,15 +60,25 @@ One real double root found:
 	NO REAL ROOTS
 
 ==> 0 49 7
-	INVALID
+	NOT QUADRATIC
 
 ==> 0 0 0
-	INVALID
+	NOT QUADRATIC
 
 ==> 3 3 3
 	NO REAL ROOTS
 
-==> 1 4 3.4e40
-	INVALID
+==> 11 44 3.4e20
+	NO REAL ROOTS
+
+==> 1 4 1.1e3
+	NO REAL ROOTS
+
+==> 34.400067 46.6565677 56.111011
+	NO REAL ROOTS
+
+==> 1.0e12 9.9e12 14.0e12
+Two real double roots found:
+	Roots at: -8.190757 & -1.709244
 
 

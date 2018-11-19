@@ -6,7 +6,7 @@ CUNIT = -lcunit
 LDLIBS = -lm
 
 docker:
-	docker run -it -v "/Users/axeljeremy/Google Drive/CS-4900/QuadSolver/src":/src/ ubuntu:gcc
+	docker run -it -v "/Users/axeljeremy/Google Drive/CS-4900/QuadSolver/":/QuadSolver/ ubuntu:gcc
 
 main.o: main.h
 	${CC} -c ${CFLAGS} main.c ${LDLIBS}

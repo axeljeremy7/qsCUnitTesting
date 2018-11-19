@@ -66,6 +66,8 @@ validate_float(char *array, nummber_parts *n, FILE *fp, char id)
 
     int integer_count = 0;
     int decimals_count = 0;
+    int sign = 0;
+    int count_e = 0;
     for (i=0; i<len; i++)
     {
         if (array[i] == '.'){
@@ -75,26 +77,62 @@ validate_float(char *array, nummber_parts *n, FILE *fp, char id)
         }
         else if (array[i] < 48 || array[i] > 57 )
         {   
-            return_value = 2;
-            fprintf(fp, "Error Line 79: ");
-            fprintf(fp, "The input for a is %s, which is invalid.\n", array);
+            // fprintf( fp, "LOG LINE 80:::::: c: %c \n", array[i]);
+             if (array[i] == 'e' || array[i] == 'E')
+            {
+                count_e++;
+                // fprintf( fp, "LOG LINE 107:::::: e: %d sign: %d\n", count_e, sign);
+            }
+            if (array[i] == '-')
+            {
+                sign++;
+            }  
+            
+            if (count_e > 1)
+            {
+                return_value = 1;
+            }
+
+            if (sign == 1)
+            {
+                return_value = 1;
+            }
+            else
+            {
+                return_value = 2;
+                fprintf(fp, "Error Line 90: ");
+                fprintf(fp, "The input for a is %s, which is invalid.\n", array);
+            }
         }
         integer_count++;
-        
     }
-    fprintf (fp, "LOG LINE 85: The integer_count plus one %d\n", 
+    
+    fprintf (fp, "LOG LINE 97: The integer_count plus one %d\n", 
              integer_count);
     for (i=integer_count+1; i<len; i++)
     {
+        if (array[i] == 'e' || array[i] == 'E')
+        {
+            count_e++;
+            fprintf(fp, "LOG LINE 107:::::: e: %d sign: %d\n", count_e, sign);
+        }
+
         if (array[i] < 48 || array[i] > 57 )
         {
             return_value = 2;
-            fprintf(fp, "Error Line 92: ");
+            fprintf(fp, "Error Line 104: ");
             fprintf(fp, "The input for a is %s, which is invalid.\n", array);
             break;
         }
         decimals_count++;
     }
+
+    if (count_e == 1)
+    {
+        return_value = 1;
+    }
+
+    fprintf(fp, "LOG LINE 107: e: %d sign: %d\n", count_e, sign);
     fprintf (fp, "LOG LINE 98: The decimals_count with or without break %d\n",
              decimals_count);
 

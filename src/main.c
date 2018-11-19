@@ -99,7 +99,7 @@ main(int argc, char const *argv[])
             }
             else 
             {
-                printf("\tINVALID\n\n");
+                printf("\tNOT QUADRATIC\n\n");
             }  
         }
         else
@@ -108,7 +108,7 @@ main(int argc, char const *argv[])
         }
     }
     fclose (fp);
-
+    // printf("\n:::::: %s %f\n"," 3.4e4" ,strtof("3.4e4",NULL));
     new_line();
     return 0;
 }
