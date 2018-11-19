@@ -35,7 +35,7 @@ run2:
 	./output 2 < test2.in > out2.out
 
 run3:
-	./output 3 
+	./output 3 < user_input.in > out_user_input.out
 
 .PHONY : clean
 clean:
