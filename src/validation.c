@@ -80,10 +80,17 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id){
 
     if (return_value == 1)
     {
-        n->f_number = strtof(array, NULL);
-        n->d_number = strtod(array, NULL);
-        n->diff =  n->d_number -  n->f_number;
-        fprintf(fp, "Log Line 92: The input for %c is %s which is valid.\n", id, array);
+        if (isnormal(strtof(array, NULL)) > 0)
+        {
+            n->f_number = strtof(array, NULL);
+            n->d_number = strtod(array, NULL);
+            n->diff = n->d_number - n->f_number;
+            fprintf(fp, "Log Line 88: The input for %c is %s which is valid.\n", id, array);
+        }
+        else
+        {
+            fprintf(fp, "Error Line 92: The input for %c is %s which is not normal\n", id, array);
+        }
     }
     fprintf (fp, "The return_value %d\n", return_value);
     return return_value;
@@ -97,7 +104,7 @@ int validation_floats(char *array_a, char *array_b, char *array_c, nummber_parts
     {
         return 2;
     }
-    fprintf(fp, "Log LINE 96: %d %d %d\n", r1, r2, r3);
+    fprintf(fp, "Log LINE 107: %d %d %d\n", r1, r2, r3);
     return 1;
 }
 

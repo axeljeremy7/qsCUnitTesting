@@ -29,7 +29,7 @@ rungen:
 	./gen
 
 run:
-	./output < test1.in
+	./output < test1.in > out1.out
 
 run2:
 	./output < test2.in
