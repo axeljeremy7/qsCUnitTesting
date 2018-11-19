@@ -8,8 +8,8 @@ void new_line(){
 
 void get_precision_details(char *array, int *integer_part_len, int *decimals_part_len, FILE *fp){
     size_t len = strlen(array);
+    fprintf(fp ,"Log Line 11: %s strlen(array) => %zu\n", array, len);
     if (len == 0){
-         fprintf(fp ,"Log Line 35: strlen(array) => %zu\n", len);
         return;
     }
     size_t i=0;
@@ -93,7 +93,7 @@ void add_numbers_to_result(roots_numbers *result, nummber_parts *a, nummber_part
     int p_c = result->c.decimals_part_len;
     fprintf(fp, "Log Line 119: For a => String: %s float: %0.*f double: %0.*lf diff: %0.*lf p: %d\n", a_array, p_a, result->a.f_number, p_a, result->a.d_number, p_a,result->a.diff, p_a);
     fprintf(fp, "Log Line 120: For b => String: %s float: %0*f double: %0.*lf diff: %0.*lf p: %d\n", b_array, p_b, result->b.f_number, p_b, result->b.d_number, p_b,result->b.diff, p_b);
-    fprintf(fp, "Log Line 121: For c => String: %s float: %0.*f double: %0.*lf diff: %0.*lf p: %d\n", c_array, p_c, result->c.f_number, p_c, result->c.d_number, p_c, result->c.diff, p_b);
+    fprintf(fp, "Log Line 121: For c => String: %s float: %0.*f double: %0.*lf diff: %0.*lf p: %d\n", c_array, p_c, result->c.f_number, p_c, result->c.d_number, p_c, result->c.diff, p_c);
     
 }
 

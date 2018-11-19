@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
 {
     FILE *fp;
     srand(0);
-    fp = fopen("test.in", "w");
+    fp = fopen("test2.in", "w");
 
     double i;
     double end = pow(10.0, 3.0);

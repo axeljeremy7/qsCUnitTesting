@@ -29,10 +29,10 @@ rungen:
 	./gen
 
 run:
-	./output < test.in
+	./output < test1.in
 
 run2:
-	./output < testnums.txt
+	./output < test2.in
 
 .PHONY : clean
 clean:
