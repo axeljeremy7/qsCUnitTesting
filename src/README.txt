@@ -1,5 +1,6 @@
 QUADSOLVER
 
+CUnit needed for testing. Can install with: sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev
 
  GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
 remote: error: Trace: 63a2cf1c8e683ff1424cee88145cfa01

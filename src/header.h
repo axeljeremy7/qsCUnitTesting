@@ -1,5 +1,3 @@
-
-
 #ifndef LIB_HEADER
 #define LIB_HEADER
 #include <stdio.h>

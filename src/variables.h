@@ -1,4 +1,3 @@
-
 #ifndef VAR
 #define VAR
 

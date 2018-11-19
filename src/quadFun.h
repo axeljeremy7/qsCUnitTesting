@@ -1,5 +1,3 @@
-
-
 #ifndef QUADFUN_H
 #define QUADFUN_H
 

@@ -1,0 +1,53 @@
+--- USERS ---
+
+INPUT INFO:
+
+	INPUT PRECISION:
+
+		Inputs are passed as NORMALIZED FLOAT values. 
+		This allows a maximum precision of 6 decimal places.
+
+	INPUT LIMITS:
+
+		As inputs are NORMALIZED FLOAT values, entered input must not exceed ±3.4E+38.
+		The smallest positive value allowed is 1.2E-38.
+
+	EXAMPLE GOOD INPUT:
+		
+		4 12.0 2.182345 - All values in valid range & no illegal characters.
+		
+	EXAMPLE BAD INPUT:
+		
+		a4 12.1234567 3.4e+39 - Illegal character value, 
+					value out of range of precision,
+					value greater than maximum.
+		
+
+OUTPUT INFO:
+
+	OUTPUT PRECISION:
+
+		Output values are passed as NORMALIZED DOUBLE values.
+		This allows a maximum precision of 15 decimal places.
+
+	OUTPUT LIMITS:
+
+		As output values are NORMALIZED DOUBLE values, output cannot exceed ±1.7E+308.
+		The smallest positive value allowed is 2.3E-308.
+
+
+HOW TO USE:
+
+	This program is designed to take input from STDIN, which is redirected to a file. 
+	To use this program, simply enter your a, b, and c values in a single line in 
+	'src/user_input.in'. Take heed of input information above, as the program will 
+	output errors in one of the logs*.txt files with information on why it failed.
+
+	EXAMPLE:
+
+		user_input.in
+		--------------
+		3 4 12
+		4.0 6.0 18.0
+
+	

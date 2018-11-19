@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
     fp = fopen("test2.in", "w");
 
     double i;
-    double end = pow(10.0, 3.0);
+    double end = pow(20.0, 2.0);
 
     for(i = 0; i < end; i++)
     {
