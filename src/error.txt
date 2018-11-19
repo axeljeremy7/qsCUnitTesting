@@ -1,11 +1,37 @@
-Flag 1: The input for a is 23.807 == 23.806999, which is validd.
-Flag 1: The input for a is 46.406 == 46.405998, which is validd.
-Flag 1: The input for a is 18.8007 == 18.800699, which is validd.
-1 1 1
-Flag 1: The input for a is 0.8 == 0.800000, which is validd.
-Flag 1: The input for a is 0.9 == 0.900000, which is validd.
-Flag 1: The input for a is 0.10 == 0.100000, which is validd.
-1 1 1
-Flag 2: The input for a is 0a, which is invalid.
-Flag 2: The input for a is 0b, which is invalid.
-Flag 2: The input for a is 0c, which is invalid.
+==> 23.807 46.406 18.8007
+Log Line 82: The input for a is 23.807 == 23.806999, which is valid.
+Log Line 82: The input for a is 46.406 == 46.405998, which is valid.
+Log Line 82: The input for a is 18.8007 == 18.800699, which is valid.
+Log LINE 96: 1 1 1
+Log Line 57: integer_part_len => 2, 2
+Log Line 58:  decimals_part_len => 3, 3
+Log Line 57: integer_part_len => 2, 2
+Log Line 58:  decimals_part_len => 3, 3
+Log Line 57: integer_part_len => 2, 2
+Log Line 58:  decimals_part_len => 4, 4
+==> 0.8 0.9 0.10
+Log Line 82: The input for a is 0.8 == 0.800000, which is valid.
+Log Line 82: The input for a is 0.9 == 0.900000, which is valid.
+Log Line 82: The input for a is 0.10 == 0.100000, which is valid.
+Log LINE 96: 1 1 1
+Log Line 57: integer_part_len => 1, 1
+Log Line 58:  decimals_part_len => 1, 1
+Log Line 57: integer_part_len => 1, 1
+Log Line 58:  decimals_part_len => 1, 1
+Log Line 57: integer_part_len => 1, 1
+Log Line 58:  decimals_part_len => 2, 2
+==> 0a 0b 0c
+Error Line 73: The input for a is 0a, which is invalid.
+Error Line 73: The input for a is 0b, which is invalid.
+Error Line 73: The input for a is 0c, which is invalid.
+==> 4.343 55.5577 887.77123
+Log Line 82: The input for a is 4.343 == 4.343000, which is valid.
+Log Line 82: The input for a is 55.5577 == 55.557701, which is valid.
+Log Line 82: The input for a is 887.77123 == 887.771240, which is valid.
+Log LINE 96: 1 1 1
+Log Line 57: integer_part_len => 1, 1
+Log Line 58:  decimals_part_len => 3, 3
+Log Line 57: integer_part_len => 2, 2
+Log Line 58:  decimals_part_len => 4, 4
+Log Line 57: integer_part_len => 3, 3
+Log Line 58:  decimals_part_len => 5, 5

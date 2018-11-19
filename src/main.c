@@ -17,45 +17,51 @@ typedef struct _number_parts{
     float number;
 } nummber_parts;
 
-typedef struct _roots_equation {
+typedef struct _roots_numbers {
     nummber_parts a;
     nummber_parts b;
     nummber_parts c;
     double x1;
     double x2;
-} roots_equation;
+} roots_numbers;
 
 void new_line(){
     printf("\n");
 }
 
-void get_precision_details(char *array, size_t *integer_part_len, size_t *decimals_part_len){
-    unsigned int len = strlen(array);
+void get_precision_details(char *array, size_t *integer_part_len, size_t *decimals_part_len, FILE *fp){
+    size_t len = strlen(array);
     if (len == 0){
+         fprintf(fp ,"Log Line 35: strlen(array) => %zu\n", len);
         return;
     }
     size_t i=0;
     size_t integer_count = 0;
     size_t decimals_count = 0;
-    for (i=0; i<len; i++){
+    for (i=0; i<len; i++)
+    {
         printf("%c, ", array[i]);
         integer_count++;
         if (array[i] == '.'){
             break;
         }
     }
-    for (i=integer_count; i<len; i++){
+    for (i=integer_count; i<len; i++)
+    {
         printf("%c, ", array[i]);
         decimals_count++;
     }
     integer_count--;
     *integer_part_len = integer_count;
     *decimals_part_len = decimals_count;
-    new_line();
-    printf("pre: %zu, %zu", integer_count, decimals_count);
-    new_line();
-    printf("post: %zu, %zu", *integer_part_len,  *decimals_part_len);
-    new_line();
+    fprintf(fp ,"Log Line 57: integer_part_len => %zu, %zu\n", integer_count, *integer_part_len);
+    fprintf(fp ,"Log Line 58:  decimals_part_len => %zu, %zu\n", decimals_count,  *decimals_part_len);
+}
+
+void get_precision(char *a_array, char *b_array, char *c_array, nummber_parts *a, nummber_parts *b, nummber_parts *c){
+    // get_precision_details(a_array, &a.integer_part_len, &a.decimals_part_len, fp);
+    // get_precision_details(b_array, &b.integer_part_len, &b.decimals_part_len, fp);
+    // get_precision_details(c_array, &c.integer_part_len, &c.decimals_part_len, fp);
 }
 
 int validate_float(char *array, nummber_parts *n, FILE *fp){
@@ -70,7 +76,7 @@ int validate_float(char *array, nummber_parts *n, FILE *fp){
             if (array[i] < 48 || array[i] > 57)
             {
                 return_value = 2;
-                fprintf (fp, "Flag 2: The input for a is %s, which is invalid.\n", array);
+                fprintf (fp, "Error Line 73: The input for a is %s, which is invalid.\n", array);
                 break;
             }
         }
@@ -79,7 +85,7 @@ int validate_float(char *array, nummber_parts *n, FILE *fp){
     if (return_value == 1)
     {
         n->number = strtof(array, NULL);
-        fprintf(fp, "Flag 1: The input for a is %s == %f, which is validd.\n", array, n->number);
+        fprintf(fp, "Log Line 82: The input for a is %s == %f, which is valid.\n", array, n->number);
     }
 
     return return_value;
@@ -93,10 +99,26 @@ int validation_floats(char *array_a, char *array_b, char *array_c, nummber_parts
     {
         return 2;
     }
-    fprintf(fp, "%d %d %d\n", r1, r2, r3);
+    fprintf(fp, "Log LINE 96: %d %d %d\n", r1, r2, r3);
     return 1;
 }
 
+
+void add_numbers(roots_numbers *result, nummber_parts *a, nummber_parts *b, nummber_parts *c, FILE *fp){
+    result->a = *a;
+    result->a.integer_part_len = a->integer_part_len;
+    result->a.decimals_part_len = a->decimals_part_len;
+    printf("^^ %zu %zu %f\n", result->a.integer_part_len, result->a.decimals_part_len, result->a.number);
+    result->b = *b;
+    result->b.integer_part_len = b->integer_part_len;
+    result->b.decimals_part_len = b->decimals_part_len;
+    printf("^^ %zu %zu %f\n", result->b.integer_part_len, result->b.decimals_part_len, result->b.number);
+    result->c = *c;
+    result->c.integer_part_len = c->integer_part_len;
+    result->c.decimals_part_len = c->decimals_part_len;
+    printf("^^ %zu %zu %f\n", result->c.integer_part_len, result->c.decimals_part_len, result->c.number);
+    
+}
 
 
 int main(int argc, char const *argv[])
@@ -106,7 +128,7 @@ int main(int argc, char const *argv[])
     char c_array[1024];
     FILE *fp = fopen("error.txt","w");
 
-    roots_equation result;
+    roots_numbers result;
    
     nummber_parts a;
     a.integer_part_len = 0;
@@ -126,15 +148,22 @@ int main(int argc, char const *argv[])
     // int r2;
     while(scanf("%s %s %s", a_array, b_array, c_array) == 3){
         printf("==> %s %s %s\n", a_array, b_array ,c_array);
-        if (validation_floats(a_array, b_array, c_array, &a, &b, &c,fp) == 1){
-            get_precision_details(a_array, &a.integer_part_len, &a.decimals_part_len);
+        fprintf(fp ,"==> %s %s %s\n", a_array, b_array ,c_array);
+        if (validation_floats(a_array, b_array, c_array, &a, &b, &c, fp) == 1)
+        {
+            
+            add_numbers(&result, &a, &b, &c, fp);
             new_line();
-        }else{
-            printf("NOT ONE\n");
+        }
+        else
+        {
+            printf("NOT ONE \n");
         }
         
     }
-    printf("::: %zu, %zu", result.a.integer_part_len , result.a.decimals_part_len);
+    printf("::: %zu, %zu\n", result.a.integer_part_len , result.a.decimals_part_len);
+    printf("::: %zu, %zu\n", result.b.integer_part_len , result.b.decimals_part_len);
+    printf("::: %zu, %zu\n", result.c.integer_part_len , result.c.decimals_part_len);
     // new_line();
     
     // float t;
