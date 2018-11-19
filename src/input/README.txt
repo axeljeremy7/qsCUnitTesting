@@ -1,0 +1,1 @@
+This sub-directory contains all of the input files for STDIN for qSolver.

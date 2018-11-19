@@ -39,15 +39,21 @@ OUTPUT INFO:
 HOW TO USE:
 
 	This program is designed to take input from STDIN, which is redirected to a file. 
-	To use this program, simply enter your a, b, and c values in a single line in 
-	'src/user_input.in'. Take heed of input information above, as the program will 
-	output errors in one of the logs*.txt files with information on why it failed.
+	To use this program, simply enter your a, b, and c values in separate single lines in 
+	'input/user_input.in'. Then, type 'make userrun' in the terminal. This will compile the 
+	quad solver program and run it using the 'user_input.in' file. Your results will be in 
+	the file 'output/user_output.out'.
+
+	Take heed of input information above, as the program will output errors in the 
+	'logs/userlogs.txt' file with information on why it failed.
 
 	EXAMPLE:
 
 		user_input.in
 		--------------
-		3 4 12
+		9 12 4
 		4.0 6.0 18.0
 
-	
+		terminal
+		--------------
+		.../src$ make userrun

@@ -23,8 +23,8 @@ test.o: variables.h header.h validation.h quadFun.h test.h
 test: test.o quadFun.o validation.o
 	${CC} test.o quadFun.o validation.o -o qsTest ${LDLIBS} ${CUNIT}
 
-output: main.o quadFun.o validation.o main.h
-	${CC} main.o quadFun.o validation.o -o output ${LDLIBS}
+qSolver: main.o quadFun.o validation.o main.h
+	${CC} main.o quadFun.o validation.o -o qSolver ${LDLIBS}
 
 gene:
 	${CC} -c ${CFLAGS} gennum.c ${LDLIBS}
@@ -32,25 +32,28 @@ gene:
 geneo: gennum.o 
 	${CC} gennum.o  -o gen ${LDLIBS}
 
+run:
+	./qSolver 1 < input/val1.in > output/val1.out 2> logs/error.txt
+
+run2:
+	./qSolver 2 < input/val2.in > output/val2.out 2> logs/error.txt
+
+user:
+	./qSolver 3 < input/user_input.in > output/user_output.out 2> logs/error.txt
+
 runtest:
-	./qsTest > test_suite_results.out
+	./qsTest > output/test_suite.results 2> logs/error.txt
 
 rungen:
 	./gen
 
-run:
-	./output 1 < test1.in > out1.out
+userrun:
+	./runuser.sh
 
-run2:
-	./output 2 < test2.in > out2.out
-
-run3:
-	./output 3 < user_input.in > out_user_input.out
-
-runall:
+allrun:
 	./makeall.sh
 
 .PHONY : clean
 clean:
-	rm *.o output qsTest
+	rm *.o qSolver qsTest
 

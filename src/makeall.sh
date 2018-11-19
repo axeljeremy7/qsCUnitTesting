@@ -9,7 +9,7 @@ make rungen
 make -B test
 make runtest
 
-make -B output
+make -B qSolver
 make run
 make run2
 

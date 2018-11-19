@@ -9,15 +9,15 @@ main(int argc, char const *argv[])
     FILE *fp;
     if (atoi(argv[1]) == 1)
     {
-        fp = fopen("logs1.txt", "w");
+        fp = fopen("logs/val1_logs.txt", "w");
     }
     else if (atoi(argv[1]) == 2)
     {
-        fp = fopen("logs2.txt", "w");
+        fp = fopen("logs/val2_logs.txt", "w");
     }
     else 
     {
-        fp = fopen("logs3.txt", "w");
+        fp = fopen("logs/user_logs.txt", "w");
     }
     char a_array[1024];
     char b_array[1024];
@@ -108,123 +108,7 @@ main(int argc, char const *argv[])
         }
     }
     fclose (fp);
-    // float t = 1/0;
-    // float test1 = strtof("887.77127", NULL);
-    // double test2 = strtod("887.77127", NULL);
-    // printf("*** float: %f, (%f + 0.00003) = %f double: %f\n", test1, test1, test1 + 0.00003, test2);
-
-    // printf("**** %f", FLT_MAX*2);
-    // printf("FLT_MIN      = %+f\n", FLT_MIN);
-    // printf("FLT_MIN     = %e\n", FLT_MIN);
-    // printf("FLT_MIN     = %e\n", strtof("-1.175494e-38",NULL));
-    // printf("FLT_MAX      = %e\n", FLT_MAX);
 
     new_line();
     return 0;
 }
-
-
-// end
-
-// int main(int argc, char const *argv[])
-// {
-//     char a[1024];
-//     char b[1024];
-//     char c[1024];
-//     while(scanf("%s %s %s", a, b, c) == 3){
-//         printf("==> %s %s %s\n", a, b ,c);
-//         double aa = strtof(a, NULL);
-//         double bb = strtof(b, NULL);
-//         double cc = strtof(c, NULL);
-//         printf("%zu %zu %zu\n", strlen(a), strlen(b), strlen(c));
-//         printf("%f %f %f\n", aa, bb, cc);
-//         float aaa = strtof(a, NULL);
-//         float bbb = strtof(b, NULL);
-//         float ccc = strtof(c, NULL);
-//         printf("%f %f %f\n", aaa, bbb, ccc);
-
-//         printf("....\n");
-//     }
-//     float a1 = 23.807;
-//     float b1 = 46.406;
-//     float c1 = 18.8007;
-//     printf("%.3f %.3f %.4f\n", a1, b1, c1);
-//     printf("%lf %lf %lf\n", a1, b1, c1);
-//     printf("\nEXIT\n");
-//     return 0;
-// }
-
-
-
-
-
-
-// int main(int argc, char const *argv[])
-// {
-//     char a[10];
-//     char b[10];
-//     char c[10];
-//     while(scanf("%s %s %s", a, b, c) == 3){
-//         printf("==> %s %s %s\n", a, b ,c);
-//         double aa = atof(a);
-//         double bb = atof(b);
-//         double cc = atof(c);
-//         printf("%f %f %f\n", aa, bb, cc);
-//         float aaa = atof(a);
-//         float bbb = atof(b);
-//         float ccc = atof(c);
-//         printf("%f %f %f\n", aaa, bbb, ccc);
-
-//         printf("....\n");
-//     }
-//     printf("\nEXIT\n");
-//     return 0;
-// }
-
-
-// int main(int argc, char const *argv[])
-// {
-//     float a, b, c;
-//     double d;
-//     double x1, x2;
-
-//     // #23.807 46.456 18.097
-
-//     if (validation_input(argc, argv, &a, &b, &c) == 0)
-//     {
-//         if (check_nan_inf_numbers(argc, argv) == 0)
-//         {
-//             printf("\n");
-//             printf("Value 'a' = %f\n", a);
-//             printf("Value 'b' = %f\n", b);
-//             printf("Value 'c' = %f\n", c);
-
-//             d = discrim(a, b, c);
-
-//             int numRoots;
-//             numRoots = check_discrim(d);
-
-//             if (numRoots == 0)
-//             {
-//                 printf("\nReturning exit code -2: NO REAL ROOTS\n\n");
-//                 return (-2);
-//             }
-//             else if (numRoots == 1)
-//             {
-//                 double dblRoot;
-//                 dblRoot = get_root_minus(a, b, c, d);
-//                 printf("\nOne real double root found:");
-//                 printf("\n\tRoot at: %lf\n\n", dblRoot);
-//             }
-//             else
-//             {
-//                 x1 = get_root_minus(a, b, c, d);
-//                 x2 = get_root_plus(a, b, c, d);
-//                 printf("\nTwo real double roots found:");
-//                 printf("\n\tRoots at: %lf & %lf\n\n", x1, x2);
-//             }
-//         }
-//     }
-
-//     return 0;
-// }
