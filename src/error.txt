@@ -9,6 +9,9 @@ Log Line 57: integer_part_len => 2, 2
 Log Line 58:  decimals_part_len => 3, 3
 Log Line 57: integer_part_len => 2, 2
 Log Line 58:  decimals_part_len => 4, 4
+Log LINE 112: integer_part_len=>2 decimals_part_len=>3 23.807 == 23.807
+Log LINE 116: integer_part_len=>2 decimals_part_len=>3 46.406 == 46.406
+Log LINE 120: integer_part_len=>2 decimals_part_len=>4 18.8007 == 18.8007
 ==> 0.8 0.9 0.10
 Log Line 82: The input for a is 0.8 == 0.800000, which is valid.
 Log Line 82: The input for a is 0.9 == 0.900000, which is valid.
@@ -20,14 +23,17 @@ Log Line 57: integer_part_len => 1, 1
 Log Line 58:  decimals_part_len => 1, 1
 Log Line 57: integer_part_len => 1, 1
 Log Line 58:  decimals_part_len => 2, 2
+Log LINE 112: integer_part_len=>1 decimals_part_len=>1 0.8 == 0.8
+Log LINE 116: integer_part_len=>1 decimals_part_len=>1 0.9 == 0.9
+Log LINE 120: integer_part_len=>1 decimals_part_len=>2 0.10 == 0.10
 ==> 0a 0b 0c
 Error Line 73: The input for a is 0a, which is invalid.
 Error Line 73: The input for a is 0b, which is invalid.
 Error Line 73: The input for a is 0c, which is invalid.
-==> 4.343 55.5577 887.77123
+==> 4.343 55.5577 887.77127
 Log Line 82: The input for a is 4.343 == 4.343000, which is valid.
 Log Line 82: The input for a is 55.5577 == 55.557701, which is valid.
-Log Line 82: The input for a is 887.77123 == 887.771240, which is valid.
+Log Line 82: The input for a is 887.77127 == 887.771240, which is valid.
 Log LINE 96: 1 1 1
 Log Line 57: integer_part_len => 1, 1
 Log Line 58:  decimals_part_len => 3, 3
@@ -35,3 +41,6 @@ Log Line 57: integer_part_len => 2, 2
 Log Line 58:  decimals_part_len => 4, 4
 Log Line 57: integer_part_len => 3, 3
 Log Line 58:  decimals_part_len => 5, 5
+Log LINE 112: integer_part_len=>1 decimals_part_len=>3 4.343 == 4.343
+Log LINE 116: integer_part_len=>2 decimals_part_len=>4 55.5577 == 55.5577
+Log LINE 120: integer_part_len=>3 decimals_part_len=>5 887.77124 == 887.77127
