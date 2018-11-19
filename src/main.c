@@ -58,19 +58,51 @@ void get_precision_details(char *array, size_t *integer_part_len, size_t *decima
     new_line();
 }
 
-int validation_floats(char *array_a, char *array_b, char *array_c){
+int validate_float(char *array, nummber_parts *n, FILE *fp){
+    float test = strtof(array, NULL);
+    size_t len = strlen(array);
+    size_t i;
+    int return_value = 1;
+    if (test == (float)0.0)
+    {
+        for (i = 0; i < len; i++)
+        {
+            if (array[i] < 48 || array[i] > 57)
+            {
+                return_value = 2;
+                fprintf (fp, "Flag 2: The input for a is %s, which is invalid.\n", array);
+                break;
+            }
+        }
+    }
 
+    if (return_value == 1)
+    {
+        n->number = strtof(array, NULL);
+        fprintf(fp, "Flag 1: The input for a is %s == %f, which is validd.\n", array, n->number);
+    }
+
+    return return_value;
+}
+
+int validation_floats(char *array_a, char *array_b, char *array_c, nummber_parts *a, nummber_parts *b, nummber_parts *c, FILE *fp){
+    validate_float(array_a, a,  fp);
+    validate_float(array_b, b, fp);
+    validate_float(array_c, c, fp);
     return 1;
 }
+
+
 
 int main(int argc, char const *argv[])
 {
     char a_array[1024];
     char b_array[1024];
     char c_array[1024];
+    FILE *fp = fopen("error.txt","w");
 
     roots_equation result;
-    nummber_parts num[3];
+   
     nummber_parts a;
     a.integer_part_len = 0;
     a.decimals_part_len = 0;
@@ -88,17 +120,19 @@ int main(int argc, char const *argv[])
 
     while(scanf("%s %s %s", a_array, b_array, c_array) == 3){
         printf("==> %s %s %s\n", a_array, b_array ,c_array);
+        validation_floats(a_array, b_array, c_array, &a, &b, &c,fp);
+        new_line();
         get_precision_details(a_array, &a.integer_part_len, &a.decimals_part_len);
-        result.a.integer_part_len = a.integer_part_len;
-        result.a.decimals_part_len = a.decimals_part_len;
         
+        new_line();
     }
     printf("::: %zu, %zu", result.a.integer_part_len , result.a.decimals_part_len);
     new_line();
-   
+    
+    // float t;
     printf("FLT_MIN      = %+f\n", FLT_MIN);
     printf("FLT_MIN     = %e\n", FLT_MIN);
-    printf("FLT_MIN     = %e\n", atof("-1.175494e-38"));
+    printf("FLT_MIN     = %e\n", strtof("-1.175494e-38",NULL));
     printf("FLT_MAX      = %e\n", FLT_MAX);
 
     new_line();
