@@ -29,10 +29,10 @@ rungen:
 	./gen
 
 run:
-	./output < test1.in > out1.out
+	./output 1 < test1.in > out1.out
 
 run2:
-	./output < test2.in
+	./output 2 < test2.in > out2.out
 
 .PHONY : clean
 clean:

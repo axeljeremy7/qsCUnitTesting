@@ -6,10 +6,19 @@
 
 int main(int argc, char const *argv[])
 {
+    printf("%d , %s, %d , \n", argc, argv[1], atoi(argv[1]));
+    FILE *fp;
+    if (atoi(argv[1]) == 1)
+    {
+        fp = fopen("logs1.txt", "w");
+    }
+    else
+    {
+        fp = fopen("logs2.txt", "w");
+    }
     char a_array[1024];
     char b_array[1024];
     char c_array[1024];
-    FILE *fp = fopen("logs.txt","w");
 
     roots_numbers result;
    
