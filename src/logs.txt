@@ -1,0 +1,46 @@
+==> 23.807 46.406 18.8007
+Log Line 92: The input for a is 23.807 which is valid.
+Log Line 92: The input for b is 46.406 which is valid.
+Log Line 92: The input for c is 18.8007 which is valid.
+Log LINE 96: 1 1 1
+Log Line 57: integer_part_len => 2, 2
+Log Line 58:  decimals_part_len => 3, 3
+Log Line 57: integer_part_len => 2, 2
+Log Line 58:  decimals_part_len => 3, 3
+Log Line 57: integer_part_len => 2, 2
+Log Line 58:  decimals_part_len => 4, 4
+Log Line 116: For a => String: 23.807 float: 23.807 double: 23.807 diff: 0.000 p: 3
+Log Line 117: For b => String: 46.406 float: 46.405998 double: 46.406 diff: 0.000 p: 3
+Log Line 118: For c => String: 18.8007 float: 18.8007 double: 18.8007 diff: 0.0000 p: 3
+==> 0.8 0.9 0.111
+Log Line 92: The input for a is 0.8 which is valid.
+Log Line 92: The input for b is 0.9 which is valid.
+Log Line 92: The input for c is 0.111 which is valid.
+Log LINE 96: 1 1 1
+Log Line 57: integer_part_len => 1, 1
+Log Line 58:  decimals_part_len => 1, 1
+Log Line 57: integer_part_len => 1, 1
+Log Line 58:  decimals_part_len => 1, 1
+Log Line 57: integer_part_len => 1, 1
+Log Line 58:  decimals_part_len => 3, 3
+Log Line 116: For a => String: 0.8 float: 0.8 double: 0.8 diff: -0.0 p: 1
+Log Line 117: For b => String: 0.9 float: 0.900000 double: 0.9 diff: 0.0 p: 1
+Log Line 118: For c => String: 0.111 float: 0.111 double: 0.111 diff: -0.000 p: 1
+==> 0a 0b 0c
+Error Line 73: The input for a is 0a, which is invalid.
+Error Line 73: The input for a is 0b, which is invalid.
+Error Line 73: The input for a is 0c, which is invalid.
+==> 4.343777321 55.5577889 887.77127
+Log Line 92: The input for a is 4.343777321 which is valid.
+Log Line 92: The input for b is 55.5577889 which is valid.
+Log Line 92: The input for c is 887.77127 which is valid.
+Log LINE 96: 1 1 1
+Log Line 57: integer_part_len => 1, 1
+Log Line 58:  decimals_part_len => 9, 9
+Log Line 57: integer_part_len => 2, 2
+Log Line 58:  decimals_part_len => 7, 7
+Log Line 57: integer_part_len => 3, 3
+Log Line 58:  decimals_part_len => 5, 5
+Log Line 116: For a => String: 4.343777321 float: 4.343777180 double: 4.343777321 diff: 0.000000141 p: 9
+Log Line 117: For b => String: 55.5577889 float: 55.557789 double: 55.5577889 diff: 0.0000001 p: 7
+Log Line 118: For c => String: 887.77127 float: 887.77124 double: 887.77127 diff: 0.00003 p: 7
