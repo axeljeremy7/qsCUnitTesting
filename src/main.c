@@ -1,128 +1,7 @@
 
 #include "main.h"
-#include <float.h>
 
-// int main(int argc, char const *argv[])
-// {
-//     float a, b, c;
-//     while(scanf("%f %f %f", &a, &b, &c) == 3){
-//         printf(":: %f %f %f\n", a, b, c);
-//     }
-//     return 0;
-// }
-
-typedef struct _number_parts{
-    size_t integer_part_len;
-    size_t decimals_part_len;
-    float f_number;
-    double d_number;
-    double diff;
-} nummber_parts;
-
-typedef struct _roots_numbers {
-    nummber_parts a;
-    nummber_parts b;
-    nummber_parts c;
-    double x1;
-    double x2;
-} roots_numbers;
-
-void new_line(){
-    printf("\n");
-}
-
-void get_precision_details(char *array, size_t *integer_part_len, size_t *decimals_part_len, FILE *fp){
-    size_t len = strlen(array);
-    if (len == 0){
-         fprintf(fp ,"Log Line 35: strlen(array) => %zu\n", len);
-        return;
-    }
-    size_t i=0;
-    size_t integer_count = 0;
-    size_t decimals_count = 0;
-    for (i=0; i<len; i++)
-    {
-        // printf("%c, ", array[i]);
-        integer_count++;
-        if (array[i] == '.'){
-            break;
-        }
-    }
-    for (i=integer_count; i<len; i++)
-    {
-        // printf("%c, ", array[i]);
-        decimals_count++;
-    }
-    integer_count--;
-    *integer_part_len = integer_count;
-    *decimals_part_len = decimals_count;
-    fprintf(fp ,"Log Line 57: integer_part_len => %zu, %zu\n", integer_count, *integer_part_len);
-    fprintf(fp ,"Log Line 58:  decimals_part_len => %zu, %zu\n", decimals_count,  *decimals_part_len);
-}
-
-void get_precision(char *a_array, char *b_array, char *c_array, nummber_parts *a, nummber_parts *b, nummber_parts *c, FILE *fp){
-    get_precision_details(a_array, &(a->integer_part_len), &(a->decimals_part_len), fp);
-    get_precision_details(b_array, &(b->integer_part_len), &(b->decimals_part_len), fp);
-    get_precision_details(c_array, &(c->integer_part_len), &(c->decimals_part_len), fp);
-}
-
-int validate_float(char *array, nummber_parts *n, FILE *fp, char id){
-    float test = strtof(array, NULL);
-    size_t len = strlen(array);
-    size_t i;
-    int return_value = 1;
-    if (test == (float)0.0)
-    {
-        for (i = 0; i < len; i++)
-        {
-            if (array[i] < 48 || array[i] > 57)
-            {
-                return_value = 2;
-                fprintf (fp, "Error Line 73: The input for a is %s, which is invalid.\n", array);
-                break;
-            }
-        }
-    }
-
-    if (return_value == 1)
-    {
-        n->f_number = strtof(array, NULL);
-        n->d_number = strtod(array, NULL);
-        n->diff =  n->d_number -  n->f_number;
-        fprintf(fp, "Log Line 92: The input for %c is %s which is valid.\n", id, array);
-    }
-
-    return return_value;
-}
-
-int validation_floats(char *array_a, char *array_b, char *array_c, nummber_parts *a, nummber_parts *b, nummber_parts *c, FILE *fp){
-    int r1 = validate_float(array_a, a,  fp, 'a');
-    int r2 = validate_float(array_b, b, fp, 'b');
-    int r3 = validate_float(array_c, c, fp, 'c');
-    if (r1 + r2 + r3 != 3)
-    {
-        return 2;
-    }
-    fprintf(fp, "Log LINE 96: %d %d %d\n", r1, r2, r3);
-    return 1;
-}
-
-
-void add_numbers_to_result(roots_numbers *result, nummber_parts *a, nummber_parts *b, nummber_parts *c, FILE *fp, char *a_array, char *b_array, char *c_array){
-    result->a = *a;
-    result->b = *b;
-    result->c = *c;
-     // fprintf(fp, "Log LINE 112: %s\n",  "Checking if passing has been successful"); TODO: LATER TO IMPLEMENT
-    int p_a =   (int)result->a.decimals_part_len;
-    int p_b =   (int)result->b.decimals_part_len;
-    int p_c =   (int)result->c.decimals_part_len;
-    fprintf(fp, "Log Line 119: For a => String: %s float: %0.*f double: %0.*lf diff: %0.*lf p: %d\n", a_array, p_a, result->a.f_number, p_a, result->a.d_number, p_a,result->a.diff, p_a);
-    fprintf(fp, "Log Line 120: For b => String: %s float: %0*f double: %0.*lf diff: %0.*lf p: %d\n", b_array, p_b, result->b.f_number, p_b, result->b.d_number, p_b,result->b.diff, p_b);
-    fprintf(fp, "Log Line 121: For c => String: %s float: %0.*f double: %0.*lf diff: %0.*lf p: %d\n", c_array, p_c, result->c.f_number, p_c, result->c.d_number, p_c, result->c.diff, p_b);
-    
-}
-
-
+// begin
 
 int main(int argc, char const *argv[])
 {
@@ -147,7 +26,8 @@ int main(int argc, char const *argv[])
     c.integer_part_len = 0;
     c.decimals_part_len = 0;
     result.c = c;
-   
+    double d;
+    int numRoots;
     while(scanf("%s %s %s", a_array, b_array, c_array) == 3){
         printf("==> %s %s %s\n", a_array, b_array ,c_array);
         fprintf(fp ,"==> %s %s %s\n", a_array, b_array ,c_array);
@@ -155,16 +35,40 @@ int main(int argc, char const *argv[])
         {
             get_precision(a_array, b_array, c_array, &a, &b, &c, fp);
             add_numbers_to_result(&result, &a, &b, &c, fp, a_array, b_array, c_array);
-            new_line();
+            if (check_is_quadratic(result.a.f_number, fp) == 1){
+                d = discrim(result.a.f_number, result.b.f_number, result.c.f_number);
+                numRoots = check_discrim(d);
+                if (numRoots == 0)
+                {
+                    printf("\tNO REAL ROOTS\n");
+                }
+                else if (numRoots == 1)
+                {
+                    double dblRoot;
+                    dblRoot = get_root_minus(result.a.f_number, result.b.f_number, result.c.f_number, d);
+                    printf("One real double root found:");
+                    printf("\n\tRoot at: %lf\n\n", dblRoot);
+                }
+                else
+                {
+                    result.root_x1 = get_root_minus(result.a.f_number, result.b.f_number, result.c.f_number, d);
+                    result.root_x2 = get_root_plus(result.a.f_number, result.b.f_number, result.c.f_number, d);
+                    printf("Two real double roots found:");
+                    printf("\n\tRoots at: %lf & %lf\n\n", result.root_x1, result.root_x1);
+                }
+            }
+            
+        }else{
+             printf("\tINVALID\n\n");
         }
     }
-
+    fclose (fp);
     // float t = 1/0;
-    float test1 = strtof("887.77127", NULL);
-    double test2 = strtod("887.77127", NULL);
-    printf("*** float: %f, (%f + 0.00003) = %f double: %f\n", test1, test1, test1 + 0.00003, test2);
+    // float test1 = strtof("887.77127", NULL);
+    // double test2 = strtod("887.77127", NULL);
+    // printf("*** float: %f, (%f + 0.00003) = %f double: %f\n", test1, test1, test1 + 0.00003, test2);
 
-    printf("**** %f", FLT_MAX*2);
+    // printf("**** %f", FLT_MAX*2);
     // printf("FLT_MIN      = %+f\n", FLT_MIN);
     // printf("FLT_MIN     = %e\n", FLT_MIN);
     // printf("FLT_MIN     = %e\n", strtof("-1.175494e-38",NULL));
@@ -174,6 +78,8 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
+
+// end
 
 // int main(int argc, char const *argv[])
 // {
@@ -202,6 +108,8 @@ int main(int argc, char const *argv[])
 //     printf("\nEXIT\n");
 //     return 0;
 // }
+
+
 
 
 
@@ -235,7 +143,7 @@ int main(int argc, char const *argv[])
 //     double d;
 //     double x1, x2;
 
-//     #23.807 46.456 18.097
+//     // #23.807 46.456 18.097
 
 //     if (validation_input(argc, argv, &a, &b, &c) == 0)
 //     {
@@ -266,7 +174,7 @@ int main(int argc, char const *argv[])
 //             else
 //             {
 //                 x1 = get_root_minus(a, b, c, d);
-//                 x2 = get_root_add(a, b, c, d);
+//                 x2 = get_root_plus(a, b, c, d);
 //                 printf("\nTwo real double roots found:");
 //                 printf("\n\tRoots at: %lf & %lf\n\n", x1, x2);
 //             }

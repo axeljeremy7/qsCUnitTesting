@@ -27,7 +27,7 @@ double get_root_minus(float a, float b, float c, double d)
     root = (-(double)b - sqrt(d)) / (2 * (double)a);
     return root;
 }
-double get_root_add(float a, float b, float c, double d)
+double get_root_plus(float a, float b, float c, double d)
 {
     double root;
     root = (-(double)b + sqrt(d)) / (2 * (double)a);

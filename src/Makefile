@@ -22,6 +22,9 @@ output: main.o quadFun.o validation.o main.h
 run:
 	./output < test.in
 
+run2:
+	./output < testnums.txt
+
 .PHONY : clean
 clean:
 	rm *.o output
