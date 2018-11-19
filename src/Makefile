@@ -19,6 +19,15 @@ validation.o: header.h validation.h
 output: main.o quadFun.o validation.o main.h
 	${CC} main.o quadFun.o validation.o -o output ${LDLIBS}
 
+gene:
+	${CC} -c ${CFLAGS} gennum.c ${LDLIBS}
+
+geneo: gennum.o 
+	${CC} gennum.o  -o gen ${LDLIBS}
+
+rungen:
+	./gen
+
 run:
 	./output < test.in
 

@@ -7,10 +7,10 @@ int main(int argc, char const *argv[])
 {
     FILE *fp;
     srand(0);
-    fp = fopen("testnums.txt", "a+");
+    fp = fopen("test.in", "w");
 
-    int i;
-    double end = pow(10.0, 6.0);
+    double i;
+    double end = pow(10.0, 3.0);
 
     for(i = 0; i < end; i++)
     {
@@ -20,7 +20,9 @@ int main(int argc, char const *argv[])
 
         fprintf(fp, "%f %f %f\n", a, b, c);  
     }
-    
+    fclose (fp);
+
+    printf("::: %f\n", end);
 
     return 0;
 }
