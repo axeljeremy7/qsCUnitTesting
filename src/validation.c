@@ -46,18 +46,37 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id){
     size_t len = strlen(array);
     size_t i;
     int return_value = 1;
-    if (test == (float)0.0)
+    fprintf (fp, "The float of %c is %f len:%zu\n", id, test, len);
+
+    int integer_count = 0;
+    int decimals_count = 0;
+    for (i=0; i<len; i++)
     {
-        for (i = 0; i < len; i++)
-        {
-            if (array[i] < 48 || array[i] > 57)
-            {
-                return_value = 2;
-                fprintf (fp, "Error Line 73: The input for a is %s, which is invalid.\n", array);
-                break;
-            }
+        if (array[i] == '.'){
+            return_value = 1;
+            integer_count++;
+            break;
         }
+        else if (array[i] < 48 || array[i] > 57 )
+        {   
+            return_value = 2;
+            fprintf(fp, "Error Line 58: The input for a is %s, which is invalid.\n", array);
+        }
+        integer_count++;
+        
     }
+    fprintf (fp, "The integer_count plus one %d\n", integer_count);
+    for (i=integer_count+1; i<len; i++)
+    {
+        if (array[i] < 48 || array[i] > 57 )
+        {
+            return_value = 2;
+            fprintf(fp, "Error Line 71: The input for a is %s, which is invalid.\n", array);
+            break;
+        }
+        decimals_count++;
+    }
+    fprintf (fp, "The decimals_count with or without break %d\n", decimals_count);
 
     if (return_value == 1)
     {
@@ -66,7 +85,7 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id){
         n->diff =  n->d_number -  n->f_number;
         fprintf(fp, "Log Line 92: The input for %c is %s which is valid.\n", id, array);
     }
-
+    fprintf (fp, "The return_value %d\n", return_value);
     return return_value;
 }
 

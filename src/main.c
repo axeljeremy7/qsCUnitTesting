@@ -41,7 +41,7 @@ int main(int argc, char const *argv[])
                 numRoots = check_discrim(d);
                 if (numRoots == 0)
                 {
-                    printf("\tNO REAL ROOTS\n");
+                    printf("\tNO REAL ROOTS\n\n");
                 }
                 else if (numRoots == 1)
                 {
