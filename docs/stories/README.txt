@@ -1,0 +1,1 @@
+This subdirectory contains our user stories. These stories contain information such as requirements and tasks to accomplish them. The stories range from 10/08/18 to 11/19/18 with an updated story every week.

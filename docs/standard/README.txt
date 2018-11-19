@@ -1,0 +1,1 @@
+The standard subdirectory contains our standard for writing our C source code. We chose to use the C coding standards defined by GNU. Specific information on this standard can be found in the html file. This opens the website that has all the information for this standard.

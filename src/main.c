@@ -86,9 +86,14 @@ int validate_float(char *array, nummber_parts *n, FILE *fp){
 }
 
 int validation_floats(char *array_a, char *array_b, char *array_c, nummber_parts *a, nummber_parts *b, nummber_parts *c, FILE *fp){
-    validate_float(array_a, a,  fp);
-    validate_float(array_b, b, fp);
-    validate_float(array_c, c, fp);
+    int r1 = validate_float(array_a, a,  fp);
+    int r2 = validate_float(array_b, b, fp);
+    int r3 = validate_float(array_c, c, fp);
+    if (r1 + r2 + r3 != 3)
+    {
+        return 2;
+    }
+    fprintf(fp, "%d %d %d\n", r1, r2, r3);
     return 1;
 }
 
@@ -117,23 +122,26 @@ int main(int argc, char const *argv[])
     c.integer_part_len = 0;
     c.decimals_part_len = 0;
     result.c = c;
-
+   
+    // int r2;
     while(scanf("%s %s %s", a_array, b_array, c_array) == 3){
         printf("==> %s %s %s\n", a_array, b_array ,c_array);
-        validation_floats(a_array, b_array, c_array, &a, &b, &c,fp);
-        new_line();
-        get_precision_details(a_array, &a.integer_part_len, &a.decimals_part_len);
+        if (validation_floats(a_array, b_array, c_array, &a, &b, &c,fp) == 1){
+            get_precision_details(a_array, &a.integer_part_len, &a.decimals_part_len);
+            new_line();
+        }else{
+            printf("NOT ONE\n");
+        }
         
-        new_line();
     }
     printf("::: %zu, %zu", result.a.integer_part_len , result.a.decimals_part_len);
-    new_line();
+    // new_line();
     
     // float t;
-    printf("FLT_MIN      = %+f\n", FLT_MIN);
-    printf("FLT_MIN     = %e\n", FLT_MIN);
-    printf("FLT_MIN     = %e\n", strtof("-1.175494e-38",NULL));
-    printf("FLT_MAX      = %e\n", FLT_MAX);
+    // printf("FLT_MIN      = %+f\n", FLT_MIN);
+    // printf("FLT_MIN     = %e\n", FLT_MIN);
+    // printf("FLT_MIN     = %e\n", strtof("-1.175494e-38",NULL));
+    // printf("FLT_MAX      = %e\n", FLT_MAX);
 
     new_line();
     return 0;

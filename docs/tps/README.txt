@@ -1,0 +1,1 @@
+This subdirectory contains our task reports. These reports contain our to-do tasks and track their progress from week to week. The reports range from 10/08/18 to 11/19/18 with an updated report every week.
