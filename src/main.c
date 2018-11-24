@@ -5,6 +5,7 @@
 int 
 main(int argc, char const *argv[])
 {
+    // v2
     printf("%d , %s, %d , \n", argc, argv[1], atoi(argv[1]));
     FILE *fp;
     if (atoi(argv[1]) == 1)
