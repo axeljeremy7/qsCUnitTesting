@@ -1,23 +1,33 @@
 #include "main.h"
 
 void init_var(nummber_parts *v);
+int memory_ok(Line *linein, FILE *fp);
 int main(int argc, char const *argv[])
 {
     FILE *fp;
+    printf("PASS LINE 7\n");
     fp = fopen("logs/user_logs.txt", "w");
-    char a_array[512];
-    char b_array[512];
-    char c_array[512];
-
+    char a_array[512], b_array[512], c_array[512];
     roots_numbers result;
-
     double d;
     int numRoots;
     nummber_parts a, b, c;
+    Line linein;
+    linein.max = NLINE;
+    char response[3]; // User response: "Y" or "N"
+    if (memory_ok(&linein, fp) == 1)
+    {
+        printf("PASS LINE 17\n");
+       
+        free(linein.str);
+    }
+    else
+    {
+        return -1;
+    }
 
     while (scanf("%s %s %s", a_array, b_array, c_array) == 3)
     {
-
         init_var(&a);
         result.a = a;
 
@@ -26,7 +36,6 @@ int main(int argc, char const *argv[])
 
         init_var(&c);
         result.c = c;
-
 
         printf("==> %s %s %s\n", a_array, b_array, c_array);
         fprintf(fp, "\nMAIN ==> %s %s %s\n", a_array, b_array, c_array);
@@ -85,6 +94,7 @@ int main(int argc, char const *argv[])
     fclose(fp);
     // printf("\n:::::: %s %f\n"," 3.4e4" ,strtof("3.4e4",NULL));
     new_line();
+
     return 0;
 }
 
@@ -95,4 +105,41 @@ void init_var(nummber_parts *v)
     v->f_number = 0;
     v->d_number = 0;
     v->diff = 0;
+}
+
+int memory_ok(Line *linein, FILE *fp)
+{
+    if ((linein->str = malloc(NLINE)) == NULL)
+    {
+        fprintf(fp, "Systems failure no memory for malloc(%d)\n", NLINE);
+        return 0;
+    }
+    linein->len = 0;
+    linein->code = -1;
+    linein->str = '\0';
+    fprintf(fp, "Systems is ok for memory of malloc(%d)\n", NLINE);
+    return 1;
+}
+
+int solve_equation_yes_no(char *response, FILE *fp)
+{
+    printf("Do you want to solve a quadratic eqauation Ax^2 + Bx + B = 0 ? (Y/N):");
+    if (fgets(response, 2, stdin) == NULL)
+    {
+        fprintf(fp, "Input error: can not read from stdin\n");
+        return -1;
+    }
+    if (strncmp(response, "Y", 3))
+    {
+        return 1;
+    }
+    else if (strncmp(response, "N", 3))
+    {
+        return 0;
+    }
+    else
+    {
+        fprintf(fp, "Input error: response must be a single character: Y or N\n");
+        return -1;
+    }
 }

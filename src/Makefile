@@ -26,6 +26,15 @@ test: test.o quadFun.o validation.o
 qSolver: file_main.o quadFun.o validation.o file_main.h
 	${CC} file_main.o quadFun.o validation.o -o qSolver ${LDLIBS}
 
+main.o: main.h
+	${CC} -c ${CFLAGS} main.c ${LDLIBS}
+
+newmain: main.o quadFun.o validation.o main.h
+	${CC} main.o quadFun.o validation.o -o newmain ${LDLIBS}
+
+newrun:
+	./newmain
+
 gene:
 	${CC} -c ${CFLAGS} gennum.c ${LDLIBS}
 

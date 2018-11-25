@@ -1,4 +1,4 @@
-2 , 3, 3 , 
+argc: 2 , argv[1]: 3, atoi(argv[1])): 3 
 ==> 9 12 4
 One real double root found:
 	Root at: -0.666667

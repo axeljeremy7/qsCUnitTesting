@@ -6,6 +6,7 @@
 #include "header.h"
 #include "validation.h"
 #include "quadFun.h"
+#include <assert.h>
 
 
 #endif
