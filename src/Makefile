@@ -30,14 +30,17 @@ qSolver: file_main.o quadFun.o validation.o
 main.o: include/main.h
 	${CC} -c ${CFLAGS} main.c ${LDLIBS}
 
-newmain: main.o quadFun.o validation.o 
-	${CC} main.o quadFun.o validation.o -o newmain ${LDLIBS}
+# newmain: main.o quadFun.o validation.o 
+# 	${CC} main.o quadFun.o validation.o -o newmain ${LDLIBS}
 
 newmain: main.o  
 	${CC} main.o -o newmain ${LDLIBS}
 
 newrun:
 	./newmain 2> logs/user_logs.txt
+
+runv3:
+	./v3.sh	
 
 gene:
 	${CC} -c ${CFLAGS} gennum.c ${LDLIBS}

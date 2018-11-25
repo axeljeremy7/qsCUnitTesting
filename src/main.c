@@ -1,18 +1,54 @@
 #include "include/main.h"
 
-
 void init_var(nummber_parts *v);
+void init_variables(nummber_parts *a, nummber_parts *b, nummber_parts *c, roots_numbers *result);
 
-// int memory_ok(Line *linein, FILE *log);
-// int solve_equation_yes_no(FILE *log);
-// int validator_abc(Line *linein, FILE *log, char *a_array, char *b_array, char *c_array, nummber_parts *a, nummber_parts *b, nummber_parts *c, roots_numbers *result);
+int solve_equation_yes_no(FILE *log, char *response);
+
+int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *response);
+int exit_main(FILE *log, char *response);
+
 int main(int argc, char const *argv[])
 {
     FILE *log;
     printf("PASS LINE 7\n");
     log = stderr; //fopen("logs/user_logs.txt", "w");
+    
+    char a_array[128], b_array[128], c_array[128];
+    char response[2];
 
+    roots_numbers result;
+    nummber_parts a, b, c;
 
+    while (1)
+    {
+        if (solve_equation_yes_no(log, response) == 1)
+        {
+            if (read_abc(log, a_array, b_array, c_array, response) == 1)
+            {
+                init_variables(&a, &b, &c, &result);
+                if (exit_main(log, response) == 1){
+                    printf("EXITING\n");
+                    break;
+                }
+                    
+            }
+            else
+            {
+                printf("YOUR INPUT IS LESS THAN 3 OR GREATER THAN 3 VARIABLES");
+                break;
+            }
+                
+        }
+        else
+        {
+            printf("EXITING\n");
+            break;
+        }
+            
+    }
+
+    printf("\n");
     return 0;
 }
 
@@ -25,134 +61,74 @@ void init_var(nummber_parts *v)
     v->diff = 0;
 }
 
-// int memory_ok(Line *linein, FILE *log)
-// {
-//     if ( (linein->str = malloc(NLINE)) == NULL)
-//     {
-//         fprintf(log, "SYSTEM Systems failure no memory for malloc(%d)\n", NLINE);
-//         return 0;
-//     }
-//     linein->len = 0;
-//     linein->code = -1;
-//     // linein->str = '\0';
-//     fprintf(log, "SYSTEM Systems is ok for memory of malloc(%d)\n", NLINE);
-//     return 1;
-// }
+void init_variables(nummber_parts *a, nummber_parts *b, nummber_parts *c, roots_numbers *result)
+{
+    init_var(a);
+    result->a = *a;
 
-// int solve_equation_yes_no(FILE *log)
-// {
-//     char response[2]; // User response: "Y" or "N"
-//     // response[0] = '\0';
-//     // response[1] = '\0';
-//     printf("Do you want to solve a quadratic eqauation Ax^2 + Bx + B = 0 ? (Y/N):");
-//     if (fgets(response, 2, stdin) == NULL)
-//     {
-//         fprintf(log, "SYSTEM Input error: can not read from stdin\n");
-//         return -1;
-//     }
-//     fprintf(log, "SYSTEM obtained response -> %s\n", response);
-//     fprintf(log, "SYSTEM  response[0] -> %c\n", response[0]);
-//     fprintf(log, "SYSTEM  response[1] -> %c\n", response[1]);
-//     if (strncmp(response, "Y", 1) == 0)
-//     {
-//         fprintf(log, "SYSTEM -> Response Y\n");
-//         return 1;
-//     }
-//     else if (strncmp(response, "N", 1) == 0)
-//     {
-//         fprintf(log, "SYSTEM -> Response N\n");
-//         return 0;
-//     }
-//     else
-//     {
-//         fprintf(log, "SYSTEM Input error: response must be a single character: Y or N\n");
-//         return -1;
-//     }
-// }
+    init_var(b);
+    result->b = *b;
 
-// int validator_abc(Line *linein, FILE *log, char *a_array, char *b_array, char *c_array, nummber_parts *a, nummber_parts *b, nummber_parts *c, roots_numbers *result)
-// {
-    
-//     fprintf(log, "PASS 116 %d\n", linein->max);
-//     fprintf(log, "PASS 117 %d %s\n", linein->max,  linein->str);
+    init_var(c);
+    result->c = *c;
+}
 
-//     if (fgets(linein->str, linein->max, stdin) == NULL)
-//     {
-//         fprintf(log, "SYSTEM Input error: can not read from stdin\n");
-//         return -1;
-//     }
-//     else
-//     {
-//         double discriminant;
-//         int numRoots;
-//         while (sscanf(linein->str, "%s %s %s", a_array, b_array, c_array) == 3)
-//         {
-//             init_var(a);
-//             result->a = *a;
+int solve_equation_yes_no(FILE *log, char *response)
+{
+    printf("Do you want to solve a quadratic eqauation Ax^2 + Bx + B = 0 ? (Y/N):");
+    if (scanf("%1s", response) != EOF)
+    {
+        fprintf(log, "obtained response -> %s\n", response);
+        fprintf(log, "response[0] -> %c\n", response[0]);
+        fprintf(log, "response[1] -> %c\n", response[1]);
+        if (strncmp(response, "Y", 1) == 0)
+        {
+            fprintf(log, " Response is Y\n");
+            return 1;
+        }
+        else if (strncmp(response, "N", 1) == 0)
+        {
+            fprintf(log, "Response is N\n");
+            return 0;
+        }
+        else
+        {
+            fprintf(log, "Input error: response must be a single character: Y or N\n");
+            return -1;
+        }
+    }
+    return 0;
+}
 
-//             init_var(b);
-//             result->b = *b;
+int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *response)
+{
+    printf("Enter A B C:");
+    if (scanf("%127s %127s %127s", a_array, b_array, c_array) == 3)
+    {
+        fprintf(log, "A -> %s\n", a_array);
+        fprintf(log, "B -> %s\n", b_array);
+        fprintf(log, "C -> %s\n", c_array);
+        return 1;
+    }
+    else
+    {
+        fprintf(log, "Input error: You input is more than 3 variables\n");
+    }
+    return 0;
+}
 
-//             init_var(c);
-//             result->c = *c;
-
-//             printf("==> %s %s %s\n", a_array, b_array, c_array);
-//             fprintf(log, "\nMAIN ==> %s %s %s\n", a_array, b_array, c_array);
-//             if (validation_floats(a_array, b_array, c_array, a, b, c, log) == 1)
-//             {
-//                 get_precision(a_array, b_array, c_array, a, b, c, log);
-//                 add_numbers_to_result(result, a, b, c, log,
-//                                       a_array, b_array, c_array);
-
-//                 /*printf("\n\ta == %f", result.a.f_number);
-//             printf(" | b == %f", result.b.f_number);
-//             printf(" | c == %f\n\n", result.c.f_number);*/
-
-//                 if (check_is_quadratic(result->a.f_number, log) == 1)
-//                 {
-//                     discriminant = discrim(result->a.f_number,
-//                                            result->b.f_number,
-//                                            result->c.f_number);
-//                     numRoots = check_discrim(discriminant);
-//                     if (numRoots == 0)
-//                     {
-//                         printf("\tNO REAL ROOTS\n\n");
-//                     }
-//                     else if (numRoots == 1)
-//                     {
-//                         double dblRoot;
-//                         dblRoot = get_root_minus(result->a.f_number,
-//                                                  result->b.f_number,
-//                                                  result->c.f_number, discriminant);
-//                         printf("One real double root found:");
-//                         printf("\n\tRoot at: %lf\n\n", dblRoot);
-//                     }
-//                     else
-//                     {
-//                         result->root_x1 = get_root_minus(result->a.f_number,
-//                                                          result->b.f_number,
-//                                                          result->c.f_number, discriminant);
-//                         result->root_x2 = get_root_plus(result->a.f_number,
-//                                                         result->b.f_number,
-//                                                         result->c.f_number, discriminant);
-//                         printf("Two real double roots found:");
-//                         printf("\n\tRoots at: %lf & %lf\n\n",
-//                                result->root_x1, result->root_x2);
-//                     }
-//                     return 1;
-//                 }
-//                 else
-//                 {
-//                     printf("\tNOT QUADRATIC\n\n");
-//                     return 0;
-//                 }
-//             }
-//             else
-//             {
-//                 printf("\tINVALID\n\n");
-//                 return -1;
-//             }
-//         }
-//         return -1;
-//     }
-// }
+int exit_main(FILE *log, char *response)
+{
+    printf("You want to exit ? (Y/N):");
+    if (scanf("%1s", response) != EOF)
+    {
+        fprintf(log, "obtained response -> %s\n", response);
+        fprintf(log, "response[0] -> %c\n", response[0]);
+        fprintf(log, "response[1] -> %c\n", response[1]);
+        if (strncmp(response, "Y", 1) == 0)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}

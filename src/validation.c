@@ -62,7 +62,7 @@ validate_float(char *array, nummber_parts *n, FILE *fp, char id)
     size_t len = strlen(array);
     size_t i;
     int return_value = 1;
-    fprintf (fp, "LINE 65: The float of %c is %f len:%zu\n", id, test, len);
+    fprintf (fp, "LINE 65: The float of %c is %f len-> %zu\n", id, test, len);
 
     int integer_count = 0;
     int decimals_count = 0;
@@ -81,7 +81,7 @@ validate_float(char *array, nummber_parts *n, FILE *fp, char id)
              if (array[i] == 'e' || array[i] == 'E')
             {
                 count_e++;
-                // fprintf( fp, "LOG LINE 107:::::: e: %d sign: %d\n", count_e, sign);
+                fprintf( fp, "LOG LINE 84 count_e -> %d n", count_e);
             }
             if (array[i] == '-')
             {
@@ -100,14 +100,15 @@ validate_float(char *array, nummber_parts *n, FILE *fp, char id)
             else
             {
                 return_value = 2;
-                fprintf(fp, "Error Line 90: ");
+                fprintf(fp, "Error Line 103: ");
                 fprintf(fp, "The input for a is %s, which is invalid.\n", array);
+                printf("The input for a is %s, which is invalid.\n", array);
             }
         }
         integer_count++;
     }
     
-    fprintf (fp, "LOG LINE 97: The integer_count plus one %d\n", 
+    fprintf (fp, "LOG LINE 111: The integer_count plus one %d\n", 
              integer_count);
     for (i=integer_count+1; i<len; i++)
     {
@@ -215,6 +216,7 @@ int check_is_quadratic(float a, FILE *fp)
     {
         fprintf(fp, "ERROR IN LINE 178: ");
         fprintf(fp, "Equation is not quadratic - 'a' cannot be 0.\n");
+        printf("Equation is not quadratic - 'a' cannot be 0.\n");
         return 0;
     }
     return 1;
