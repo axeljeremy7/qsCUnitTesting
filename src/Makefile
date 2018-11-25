@@ -5,7 +5,6 @@ CFLAGS = -std=c99 -Wall -Werror -pedantic
 CUNIT = -lcunit
 LDLIBS = -lm
 
-OBJ
 
 docker:
 	docker run -it -v "/Users/axeljeremy/Google Drive/CS-4900/QuadSolver/":/QuadSolver/ ubuntu:gcc
@@ -13,10 +12,10 @@ docker:
 file_main.o: file_main.h
 	${CC} -c ${CFLAGS} file_main.c ${LDLIBS}
 
-quadFun.o: header.h quadFun.h
+quadFun.o: include/header.h include/quadFun.h
 	${CC} -c ${CFLAGS} quadFun.c ${LDLIBS}
 
-validation.o: header.h validation.h
+validation.o: include/header.h include/validation.h
 	${CC} -c ${CFLAGS} validation.c ${LDLIBS}
 
 test.o: variables.h header.h validation.h quadFun.h test.h
@@ -28,14 +27,14 @@ test: test.o quadFun.o validation.o
 qSolver: file_main.o quadFun.o validation.o file_main.h
 	${CC} file_main.o quadFun.o validation.o -o qSolver ${LDLIBS}
 
-main.o: main.h
+main.o: include/main.h
 	${CC} -c ${CFLAGS} main.c ${LDLIBS}
 
-newmain: main.o quadFun.o validation.o main.h
+newmain: main.o quadFun.o validation.o 
 	${CC} main.o quadFun.o validation.o -o newmain ${LDLIBS}
 
 newrun:
-	./newmain
+	./newmain 2> logs/user_logs.txt
 
 gene:
 	${CC} -c ${CFLAGS} gennum.c ${LDLIBS}
