@@ -36,20 +36,21 @@ int main(int argc, char const *argv[])
         fprintf(log, "PASS LINE 17\n");
         if (solve_equation_yes_no(log) == 1)
         {
-            fprintf(log, "PASS LINE 31\n");
-            // printf("Input a b c :");
-            fprintf(log, "=> %s\n", linein.str);
-            fprintf(log, "=> %d\n", linein.max);
-            // fprintf(log, "Input a b c :\n");
-            printf("Input A B C :\n");
-            if (fgets(linein.str, linein.max, stdin) == NULL)
-            {
-                fprintf(stderr, "Input error: can not read from stdin\n");
-                returnValue = -1;
-            }else {
-                fprintf(log, "OK    %s", linein.str);
+            // fprintf(log, "PASS LINE 31\n");
+            // // printf("Input a b c :");
+            // fprintf(log, "=> %s\n", linein.str);
+            // fprintf(log, "=> %d\n", linein.max);
+            // free(linein.str);
+            // // fprintf(log, "Input a b c :\n");
+            // printf("Input A B C :\n");
+            // if (fgets(linein2.str, linein2.max, stdin) == NULL)
+            // {
+            //     fprintf(stderr, "Input error: can not read from stdin\n");
+            //     returnValue = -1;
+            // }else {
+            //     fprintf(log, "OK    %s", linein2.str);
 
-            }
+            // }
 
             
 

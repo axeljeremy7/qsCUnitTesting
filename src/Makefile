@@ -9,7 +9,7 @@ LDLIBS = -lm
 docker:
 	docker run -it -v "/Users/axeljeremy/Google Drive/CS-4900/QuadSolver/":/QuadSolver/ ubuntu:gcc
 
-file_main.o: file_main.h
+file_main.o: include/file_main.h
 	${CC} -c ${CFLAGS} file_main.c ${LDLIBS}
 
 quadFun.o: include/header.h include/quadFun.h
@@ -24,7 +24,7 @@ test.o: variables.h header.h validation.h quadFun.h test.h
 test: test.o quadFun.o validation.o
 	${CC} test.o quadFun.o validation.o -o qsTest ${LDLIBS} ${CUNIT}
 
-qSolver: file_main.o quadFun.o validation.o file_main.h
+qSolver: file_main.o quadFun.o validation.o 
 	${CC} file_main.o quadFun.o validation.o -o qSolver ${LDLIBS}
 
 main.o: include/main.h
