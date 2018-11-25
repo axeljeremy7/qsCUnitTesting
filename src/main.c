@@ -1,13 +1,10 @@
 #include "include/main.h"
 
-// main this for stdin
-// other_file for testing
-// I think my internet crashed
-// or atleast discord crashed
 
 void init_var(nummber_parts *v);
-int memory_ok(Line *linein, FILE *log);
-int solve_equation_yes_no(FILE *log);
+
+// int memory_ok(Line *linein, FILE *log);
+// int solve_equation_yes_no(FILE *log);
 // int validator_abc(Line *linein, FILE *log, char *a_array, char *b_array, char *c_array, nummber_parts *a, nummber_parts *b, nummber_parts *c, roots_numbers *result);
 int main(int argc, char const *argv[])
 {
@@ -15,69 +12,8 @@ int main(int argc, char const *argv[])
     printf("PASS LINE 7\n");
     log = stderr; //fopen("logs/user_logs.txt", "w");
 
-    // char a_array[512], b_array[512], c_array[512];
-    // roots_numbers result;
 
-    // double d;
-    // int numRoots;
-    // nummber_parts a, b, c;
-    Line linein;
-    linein.max = NLINE;
-    // Line linein2;
-    // linein2.str = malloc(NLINE);
-    // linein2.max = NLINE;
-
-    int returnValue = 0; // 0 means OK
-
-    // int rv;
-
-    if (memory_ok(&linein, log) == 1)
-    {
-        fprintf(log, "PASS LINE 17\n");
-        if (solve_equation_yes_no(log) == 1)
-        {
-            // fprintf(log, "PASS LINE 31\n");
-            // // printf("Input a b c :");
-            // fprintf(log, "=> %s\n", linein.str);
-            // fprintf(log, "=> %d\n", linein.max);
-            // free(linein.str);
-            // // fprintf(log, "Input a b c :\n");
-            // printf("Input A B C :\n");
-            // if (fgets(linein2.str, linein2.max, stdin) == NULL)
-            // {
-            //     fprintf(stderr, "Input error: can not read from stdin\n");
-            //     returnValue = -1;
-            // }else {
-            //     fprintf(log, "OK    %s", linein2.str);
-
-            // }
-
-            
-
-
-            // rv = validator_abc(&linein, log, a_array, b_array, c_array, &a, &b, &c, &result);
-            // fprintf(log, "RV=> %d\n", rv);
-            fprintf(log, "PASS LINE 35\n");
-            free(linein.str);
-            fprintf(log, "PASS LINE 37\n");
-        }
-        else
-        {
-            returnValue = -1;
-        }
-
-        free(linein.str);
-    }
-    else
-    {
-        returnValue = -1;
-    }
-
-    fclose(log);
-    // printf("\n:::::: %s %f\n"," 3.4e4" ,strtof("3.4e4",NULL));
-    new_line();
-
-    return returnValue;
+    return 0;
 }
 
 void init_var(nummber_parts *v)
@@ -89,50 +25,50 @@ void init_var(nummber_parts *v)
     v->diff = 0;
 }
 
-int memory_ok(Line *linein, FILE *log)
-{
-    if ( (linein->str = malloc(NLINE)) == NULL)
-    {
-        fprintf(log, "SYSTEM Systems failure no memory for malloc(%d)\n", NLINE);
-        return 0;
-    }
-    linein->len = 0;
-    linein->code = -1;
-    // linein->str = '\0';
-    fprintf(log, "SYSTEM Systems is ok for memory of malloc(%d)\n", NLINE);
-    return 1;
-}
+// int memory_ok(Line *linein, FILE *log)
+// {
+//     if ( (linein->str = malloc(NLINE)) == NULL)
+//     {
+//         fprintf(log, "SYSTEM Systems failure no memory for malloc(%d)\n", NLINE);
+//         return 0;
+//     }
+//     linein->len = 0;
+//     linein->code = -1;
+//     // linein->str = '\0';
+//     fprintf(log, "SYSTEM Systems is ok for memory of malloc(%d)\n", NLINE);
+//     return 1;
+// }
 
-int solve_equation_yes_no(FILE *log)
-{
-    char response[2]; // User response: "Y" or "N"
-    // response[0] = '\0';
-    // response[1] = '\0';
-    printf("Do you want to solve a quadratic eqauation Ax^2 + Bx + B = 0 ? (Y/N):");
-    if (fgets(response, 2, stdin) == NULL)
-    {
-        fprintf(log, "SYSTEM Input error: can not read from stdin\n");
-        return -1;
-    }
-    fprintf(log, "SYSTEM obtained response -> %s\n", response);
-    fprintf(log, "SYSTEM  response[0] -> %c\n", response[0]);
-    fprintf(log, "SYSTEM  response[1] -> %c\n", response[1]);
-    if (strncmp(response, "Y", 1) == 0)
-    {
-        fprintf(log, "SYSTEM -> Response Y\n");
-        return 1;
-    }
-    else if (strncmp(response, "N", 1) == 0)
-    {
-        fprintf(log, "SYSTEM -> Response N\n");
-        return 0;
-    }
-    else
-    {
-        fprintf(log, "SYSTEM Input error: response must be a single character: Y or N\n");
-        return -1;
-    }
-}
+// int solve_equation_yes_no(FILE *log)
+// {
+//     char response[2]; // User response: "Y" or "N"
+//     // response[0] = '\0';
+//     // response[1] = '\0';
+//     printf("Do you want to solve a quadratic eqauation Ax^2 + Bx + B = 0 ? (Y/N):");
+//     if (fgets(response, 2, stdin) == NULL)
+//     {
+//         fprintf(log, "SYSTEM Input error: can not read from stdin\n");
+//         return -1;
+//     }
+//     fprintf(log, "SYSTEM obtained response -> %s\n", response);
+//     fprintf(log, "SYSTEM  response[0] -> %c\n", response[0]);
+//     fprintf(log, "SYSTEM  response[1] -> %c\n", response[1]);
+//     if (strncmp(response, "Y", 1) == 0)
+//     {
+//         fprintf(log, "SYSTEM -> Response Y\n");
+//         return 1;
+//     }
+//     else if (strncmp(response, "N", 1) == 0)
+//     {
+//         fprintf(log, "SYSTEM -> Response N\n");
+//         return 0;
+//     }
+//     else
+//     {
+//         fprintf(log, "SYSTEM Input error: response must be a single character: Y or N\n");
+//         return -1;
+//     }
+// }
 
 // int validator_abc(Line *linein, FILE *log, char *a_array, char *b_array, char *c_array, nummber_parts *a, nummber_parts *b, nummber_parts *c, roots_numbers *result)
 // {

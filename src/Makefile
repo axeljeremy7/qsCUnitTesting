@@ -7,7 +7,7 @@ LDLIBS = -lm
 
 
 docker:
-	docker run -it -v "/Users/axeljeremy/Google Drive/CS-4900/QuadSolver/":/QuadSolver/ ubuntu:gcc
+	docker run -it -v "/Users/axeljeremy/Google Drive/CS-4900/QuadSolver":/QuadSolver/ ubuntu:gcc
 
 file_main.o: include/file_main.h
 	${CC} -c ${CFLAGS} file_main.c ${LDLIBS}
@@ -32,6 +32,9 @@ main.o: include/main.h
 
 newmain: main.o quadFun.o validation.o 
 	${CC} main.o quadFun.o validation.o -o newmain ${LDLIBS}
+
+newmain: main.o  
+	${CC} main.o -o newmain ${LDLIBS}
 
 newrun:
 	./newmain 2> logs/user_logs.txt
@@ -65,5 +68,5 @@ allrun:
 
 .PHONY : clean
 clean:
-	rm *.o qSolver qsTest
+	rm *.o qSolver qsTest newmain
 
