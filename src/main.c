@@ -159,13 +159,11 @@ int solve_equation_yes_no(char *response, FILE *log)
 
 int validator_abc(Line *linein, FILE *fp)
 {
-    printf("Input a b c :");
+    printf("Input A B C :");
     if (fgets(linein->str, linein->max, stdin) == NULL)
     {
         fprintf(fp, "Input error: can not read from stdin\n");
         return -1;
     }
-    
-    
 
 }
