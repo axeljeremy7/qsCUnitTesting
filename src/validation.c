@@ -30,7 +30,7 @@ void get_precision_details(char *array, int *integer_part_len,
                            int *decimals_part_len, FILE *fp)
 {
     size_t len = strlen(array);
-    fprintf(fp, "LOG LINE 33: %s strlen(array) => %zu\n", array, len);
+    fprintf(fp, "FILE: %s FUNC: %s LINE: %d  s -> %s strlen(array) => %zu\n", __FILE__,  __func__ ,  __LINE__, array, len);
     if (len == 0)
     {
         return;
@@ -55,10 +55,8 @@ void get_precision_details(char *array, int *integer_part_len,
     integer_count--;
     *integer_part_len = integer_count;
     *decimals_part_len = decimals_count;
-    fprintf(fp, "Log Line 39: integer_part_len => %d, %d\n",
-            integer_count, *integer_part_len);
-    fprintf(fp, "Log Line 41:  decimals_part_len => %d, %d\n",
-            decimals_count, *decimals_part_len);
+    fprintf(fp, "FILE: %s FUNC: %s LINE: %d: integer_part_len => %d, %d\n",__FILE__,  __func__ ,  __LINE__, integer_count, *integer_part_len);
+    fprintf(fp, "FILE: %s FUNC: %s LINE: %d: decimals_part_len => %d, %d\n",__FILE__,  __func__ ,  __LINE__, decimals_count, *decimals_part_len);
 }
 
 void get_precision(char *a_array, char *b_array,
@@ -100,8 +98,8 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
     size_t i;
     int return_value = 1;
     fprintf(fp, "\n\n");
-    fprintf(fp, "LINE 86: The float from the string is represented of %c is %f len-> %zu\n", id, test, len);
-    // printf("\tThe float value of %c is represented as %f\n", id, test);
+    fprintf(fp, "FILE: %s FUNC: %s LINE: %d:  The float from the string is represented of %c is %f len-> %zu\n",__FILE__,  __func__ ,  __LINE__, id, test, len);
+    
     int integer_count = 0;
     int decimals_count = 0;
     int sign = 0;
@@ -117,7 +115,7 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
         }
         else if (array[i] < 48 || array[i] > 57)
         {
-            fprintf(fp, "LOG LINE 80: array[%lu] -> %c \n", i, array[i]);
+            fprintf(fp, "FILE: %s FUNC: %s LINE: %d: array[%lu] -> %c \n",__FILE__,  __func__ ,  __LINE__, i, array[i]);
             if (array[i] == 'e' || array[i] == 'E')
             {
                 count_e++;
@@ -140,9 +138,9 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
         integer_count++;
     }
 
-    fprintf(fp, "LOG LINE 121: count_e -> %d\n", count_e);
-    fprintf(fp, "LOG LINE 122: sign -> %d\n", sign);
-    fprintf(fp, "LOG LINE 123: integer_count -> %d\n", integer_count);
+    fprintf(fp, "FILE: %s FUNC: %s LINE: %d: count_e -> %d\n",__FILE__,  __func__ ,  __LINE__, count_e);
+    fprintf(fp, "FILE: %s FUNC: %s LINE: %d: sign -> %d\n",__FILE__,  __func__ ,  __LINE__, sign);
+    fprintf(fp, "FILE: %s FUNC: %s LINE: %d: integer_count -> %d\n",__FILE__,  __func__ ,  __LINE__, integer_count);
 
     if (return_value == 1)
     {
@@ -167,10 +165,10 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
             
             decimals_count++;
         }
-        fprintf(fp, "LOG LINE 142: count_e -> %d\n", count_e);
-        fprintf(fp, "LOG LINE 143: sign -> %d\n", sign);
-        fprintf(fp, "LOG LINE 143: decimals_count -> %d\n", decimals_count);
-        fprintf(fp, "LOG LINE 151: integer_count -> %d\n", integer_count);
+        fprintf(fp, "FILE: %s FUNC: %s LINE: %d: count_e -> %d\n",__FILE__,  __func__ ,  __LINE__, count_e);
+        fprintf(fp, "FILE: %s FUNC: %s LINE: %d: sign -> %d\n",__FILE__,  __func__ ,  __LINE__, sign);
+        fprintf(fp, "FILE: %s FUNC: %s LINE: %d: decimals_count -> %d\n",__FILE__,  __func__ ,  __LINE__, decimals_count);
+        fprintf(fp, "FILE: %s FUNC: %s LINE: %d: integer_count -> %d\n",__FILE__,  __func__ ,  __LINE__, integer_count);
     }
 
     if (return_value == 1)
@@ -179,7 +177,7 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
         {
             n->f_number = strtof(array, NULL);
             n->d_number = strtod(array, NULL);
-            fprintf(fp, "LOG LINE 151: integer_count -> %d\n", integer_count);
+            fprintf(fp, "FILE: %s FUNC: %s LINE: %d: integer_count -> %d\n",__FILE__,  __func__ ,  __LINE__, integer_count);
             n->integer_part_len = integer_count - sign - 1;
             n->decimals_part_len = decimals_count;
             n->diff = n->d_number - n->f_number;
@@ -187,18 +185,18 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
                 n->contain_e = 1;
                 n->decimals_part_len = 32;
             }
-            fprintf(fp, "LOG LINE 159:The input for %c is %s is valid.\n",
-                    id, array);
+            fprintf(fp, "FILE: %s FUNC: %s LINE: %d: The input for %c is %s is valid.\n",
+                    __FILE__,  __func__ ,  __LINE__, id, array);
         }
         else
         {
-            fprintf(fp, "LOG LINE 163: The input for %c is %s which is not normal\n",
-                    id, array);
+            fprintf(fp, "FILE: %s FUNC: %s LINE: %d: The input for %c is %s which is not normal\n",
+                    __FILE__,  __func__ ,  __LINE__, id, array);
             printf("The input for %c is %s is not normal\n",
                    id, array);
         }
     }
-    fprintf(fp, "LOG LINE 171: The return_value %d, 1 means OK\n", return_value);
+    fprintf(fp, "FILE: %s FUNC: %s LINE: %d: The return_value %d, 1 means OK\n",__FILE__,  __func__ ,  __LINE__, return_value);
     return return_value;
 }
 
@@ -214,7 +212,7 @@ int validation_floats(char *array_a, char *array_b,
         printf("Invalid input for the A, B, C float values");
         return 2;
     }
-    fprintf(fp, "Log LINE 197: %d %d %d\n", r1, r2, r3);
+    fprintf(fp, "FILE: %s FUNC: %s LINE: %d: %d %d %d\n",__FILE__,  __func__ ,  __LINE__, r1, r2, r3);
     return 1;
 }
 
@@ -240,7 +238,6 @@ void add_numbers_to_result(roots_numbers *result, nummber_parts *a,
     int p_a = result->a.decimals_part_len;
     int p_b = result->b.decimals_part_len;
     int p_c = result->c.decimals_part_len;
-    fprintf(fp, "Log Line 153: ");
     fprintf(fp, "For a => String: %s float: ", a_array);
     fprintf(fp, "%0.*f double: %0.*lf diff: %0.*lf p: %d\n",
             p_a, result->a.f_number, p_a, result->a.d_number,
@@ -265,7 +262,7 @@ int check_is_quadratic(float a, FILE *fp)
     if (a == (float)0.0)
     {
         fprintf(fp, "ERROR IN LINE 178: ");
-        fprintf(fp, "Equation is not quadratic - 'a' cannot be 0.\n");
+        fprintf(fp, "FILE: %s FUNC: %s LINE: %d: Equation is not quadratic - 'a' cannot be 0.\n", __FILE__,  __func__ ,  __LINE__);
         printf("Equation is not quadratic - 'a' cannot be 0.\n");
         return 0;
     }
