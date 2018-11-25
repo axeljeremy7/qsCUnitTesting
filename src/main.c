@@ -28,24 +28,15 @@ int main(int argc, char const *argv[])
             {
                 init_variables(&a, &b, &c, &result);
                 if (exit_main(log, response) == 1){
-                    printf("EXITING\n");
                     break;
                 }
                     
             }
             else
-            {
-                printf("YOUR INPUT IS LESS THAN 3 OR GREATER THAN 3 VARIABLES");
-                break;
-            }
-                
+                break;    
         }
         else
-        {
-            printf("EXITING\n");
-            break;
-        }
-            
+            break;     
     }
 
     printf("\n");
@@ -89,11 +80,14 @@ int solve_equation_yes_no(FILE *log, char *response)
         else if (strncmp(response, "N", 1) == 0)
         {
             fprintf(log, "Response is N\n");
+            printf("EXITING\n");
             return 0;
         }
         else
         {
             fprintf(log, "Input error: response must be a single character: Y or N\n");
+            printf("Input error: response must be a single character: Y or N\n");
+            printf("EXITING\nRun again the program"); // TO DO HANDLE THIS PART 
             return -1;
         }
     }
@@ -113,6 +107,7 @@ int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *respo
     else
     {
         fprintf(log, "Input error: You input is more than 3 variables\n");
+        printf("Input error: You input is more than 3 variables\n");
     }
     return 0;
 }
@@ -127,8 +122,13 @@ int exit_main(FILE *log, char *response)
         fprintf(log, "response[1] -> %c\n", response[1]);
         if (strncmp(response, "Y", 1) == 0)
         {
+            printf("EXITING\n");
             return 1;
         }
     }
-    return 0;
+    else
+    {
+        return 0;
+    }
+    
 }

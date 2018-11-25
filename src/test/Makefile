@@ -1,0 +1,24 @@
+SHELL = /bin/sh
+CC = gcc
+CFLAGS = -std=c99 -Wall -Werror -pedantic
+LDLIBS = -lm
+
+
+validation.o: ../include/header.h ../include/validation.h
+	${CC} -c ${CFLAGS} validation.c ${LDLIBS}
+
+testvalidation.o: 
+	${CC} -c ${CFLAGS} testvalidation.c ${LDLIBS}	
+
+testvalidation: testvalidation.o validation.o
+	${CC} testvalidation.o validation.o -o testvalidation ${LDLIBS}
+
+run1:
+	./testvalidation 2> ../logs/test1_logs.txt
+
+runall1:
+	./t1.sh	
+
+.PHONY : clean
+clean:
+	rm -f *.o testvalidation

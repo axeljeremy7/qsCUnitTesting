@@ -1,0 +1,80 @@
+
+
+LINE 86: The float from the string is represented of a is -34.400066 len-> 10
+LOG LINE 80: array[0] -> - 
+LOG LINE 121: count_e -> 0
+LOG LINE 122: sign -> 1
+LOG LINE 123: integer_count -> 4
+LOG LINE 124
+
+LOG LINE 142: count_e -> 0
+LOG LINE 143: sign -> 1
+LOG LINE 143: decimals_count -> 6
+LOG LINE 159:The input for a is -34.400067 is valid.
+LOG LINE 171: The return_value 1
+
+
+LINE 86: The float from the string is represented of b is 46.656567 len-> 10
+LOG LINE 121: count_e -> 0
+LOG LINE 122: sign -> 0
+LOG LINE 123: integer_count -> 3
+LOG LINE 124
+
+LOG LINE 142: count_e -> 0
+LOG LINE 143: sign -> 0
+LOG LINE 143: decimals_count -> 7
+LOG LINE 159:The input for b is 46.6565677 is valid.
+LOG LINE 171: The return_value 1
+
+
+LINE 86: The float from the string is represented of c is 56.111012 len-> 9
+LOG LINE 121: count_e -> 0
+LOG LINE 122: sign -> 0
+LOG LINE 123: integer_count -> 3
+LOG LINE 124
+
+LOG LINE 142: count_e -> 0
+LOG LINE 143: sign -> 0
+LOG LINE 143: decimals_count -> 6
+LOG LINE 159:The input for c is 56.111011 is valid.
+LOG LINE 171: The return_value 1
+Log LINE 197: 1 1 1
+
+
+LINE 86: The float from the string is represented of a is 999999995904.000000 len-> 7
+LOG LINE 121: count_e -> 0
+LOG LINE 122: sign -> 0
+LOG LINE 123: integer_count -> 2
+LOG LINE 124
+
+LOG LINE 137: The input for a is 1.0e12 , which is invalid.
+LOG LINE 142: count_e -> 1
+LOG LINE 143: sign -> 0
+LOG LINE 143: decimals_count -> 1
+LOG LINE 171: The return_value 3
+
+
+LINE 86: The float from the string is represented of b is 9900000280576.000000 len-> 6
+LOG LINE 121: count_e -> 0
+LOG LINE 122: sign -> 0
+LOG LINE 123: integer_count -> 2
+LOG LINE 124
+
+LOG LINE 137: The input for a is 9.9e12, which is invalid.
+LOG LINE 142: count_e -> 1
+LOG LINE 143: sign -> 0
+LOG LINE 143: decimals_count -> 1
+LOG LINE 171: The return_value 3
+
+
+LINE 86: The float from the string is represented of c is 13999999549440.000000 len-> 7
+LOG LINE 121: count_e -> 0
+LOG LINE 122: sign -> 0
+LOG LINE 123: integer_count -> 3
+LOG LINE 124
+
+LOG LINE 137: The input for a is 14.0e12, which is invalid.
+LOG LINE 142: count_e -> 1
+LOG LINE 143: sign -> 0
+LOG LINE 143: decimals_count -> 1
+LOG LINE 171: The return_value 3

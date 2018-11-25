@@ -4,6 +4,10 @@
 #include "header.h"
 #include "variables.h"
 
+void init_var(nummber_parts *v);
+void init_variables(nummber_parts *a, nummber_parts *b, nummber_parts *c, roots_numbers *result);
+
+
 void new_line();
 void get_precision_details(char *array, int *integer_part_len, 
                            int *decimals_part_len, FILE *fp);
