@@ -33,8 +33,8 @@ main.o: include/main.h
 # newmain: main.o quadFun.o validation.o 
 # 	${CC} main.o quadFun.o validation.o -o newmain ${LDLIBS}
 
-newmain: main.o  
-	${CC} main.o -o newmain ${LDLIBS}
+newmain: main.o validation.o quadFun.o
+	${CC} main.o validation.o quadFun.o -o newmain ${LDLIBS}
 
 newrun:
 	./newmain 2> logs/user_logs.txt

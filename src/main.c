@@ -1,8 +1,5 @@
 #include "include/main.h"
 
-void init_var(nummber_parts *v);
-void init_variables(nummber_parts *a, nummber_parts *b, nummber_parts *c, roots_numbers *result);
-
 int solve_equation_yes_no(FILE *log, char *response);
 
 int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *response);
@@ -13,12 +10,14 @@ int main(int argc, char const *argv[])
     FILE *log;
     printf("PASS LINE 7\n");
     log = stderr; //fopen("logs/user_logs.txt", "w");
-    
+
     char a_array[128], b_array[128], c_array[128];
     char response[2];
 
     roots_numbers result;
     nummber_parts a, b, c;
+    int discriminant, numRoots;
+    double dblRoot;
 
     while (1)
     {
@@ -27,41 +26,66 @@ int main(int argc, char const *argv[])
             if (read_abc(log, a_array, b_array, c_array, response) == 1)
             {
                 init_variables(&a, &b, &c, &result);
-                if (exit_main(log, response) == 1){
+                if (validation_floats(a_array, b_array, c_array, &a, &b, &c, log) == 1)
+                {
+                    add_abc_to_result(&result, &a, &b, &c, log);
+                    show_precision_details(&(result.a), &(result.b), &(result.c));
+                    if (check_is_quadratic(result.a.f_number, log) == 1)
+                    {
+                        discriminant = discrim(result.a.f_number,
+                                               result.b.f_number,
+                                               result.c.f_number);
+                        numRoots = check_discrim(discriminant);
+                        if (numRoots == 0)
+                        {
+                            printf("\tNO REAL ROOTS\n\n");
+                        }
+                        else if (numRoots == 1)
+                        {
+                            
+                            dblRoot = get_root_minus(result.a.f_number,
+                                                     result.b.f_number,
+                                                     result.c.f_number, discriminant);
+                            printf("\tOne real double root found:\n");
+                            printf("Root is -> %lf\n", dblRoot);
+                        }
+                        else
+                        {
+                            result.root_x1 = get_root_minus(result.a.f_number,
+                                                             result.b.f_number,
+                                                             result.c.f_number, discriminant);
+                            result.root_x2 = get_root_plus(result.a.f_number,
+                                                            result.b.f_number,
+                                                            result.c.f_number, discriminant);
+                            printf("Two real double roots found:");
+                            printf("\n\tRoots at: %lf & %lf\n\n",
+                                   result.root_x1, result.root_x2);
+                        }
+                        
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                else
+                {
                     break;
                 }
-                    
+                if (exit_main(log, response) == 1)
+                {
+                    break;
+                }
             }
             else
-                break;    
+                break;
         }
         else
-            break;     
+            break;
     }
 
     printf("\n");
     return 0;
-}
-
-void init_var(nummber_parts *v)
-{
-    v->integer_part_len = 0;
-    v->decimals_part_len = 0;
-    v->f_number = 0;
-    v->d_number = 0;
-    v->diff = 0;
-}
-
-void init_variables(nummber_parts *a, nummber_parts *b, nummber_parts *c, roots_numbers *result)
-{
-    init_var(a);
-    result->a = *a;
-
-    init_var(b);
-    result->b = *b;
-
-    init_var(c);
-    result->c = *c;
 }
 
 int solve_equation_yes_no(FILE *log, char *response)
@@ -87,7 +111,7 @@ int solve_equation_yes_no(FILE *log, char *response)
         {
             fprintf(log, "Input error: response must be a single character: Y or N\n");
             printf("Input error: response must be a single character: Y or N\n");
-            printf("EXITING\nRun again the program"); // TO DO HANDLE THIS PART 
+            printf("EXITING\nRun again the program"); // TO DO HANDLE THIS PART
             return -1;
         }
     }
@@ -126,9 +150,6 @@ int exit_main(FILE *log, char *response)
             return 1;
         }
     }
-    else
-    {
-        return 0;
-    }
-    
+
+    return 0;
 }
