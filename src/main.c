@@ -28,6 +28,7 @@ main(int argc, char const *argv[])
    
     double d;
     int numRoots;
+    // only can be used with stdin from a file, not from terminal
     while(scanf("%s %s %s", a_array, b_array, c_array) == 3)
     {
         nummber_parts a;
