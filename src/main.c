@@ -16,7 +16,8 @@ int main(int argc, char const *argv[])
 
     roots_numbers result;
     nummber_parts a, b, c;
-    int discriminant, numRoots;
+    double discriminant;
+    int numRoots;
     double dblRoot;
 
     while (1)
@@ -34,8 +35,8 @@ int main(int argc, char const *argv[])
                     {
                         discriminant = discrim(result.a.f_number,
                                                result.b.f_number,
-                                               result.c.f_number);
-                        numRoots = check_discrim(discriminant);
+                                               result.c.f_number, log);
+                        numRoots = check_discrim(discriminant, log);
                         if (numRoots == 0)
                         {
                             printf("\tNO REAL ROOTS\n\n");
@@ -45,7 +46,7 @@ int main(int argc, char const *argv[])
                             
                             dblRoot = get_root_minus(result.a.f_number,
                                                      result.b.f_number,
-                                                     result.c.f_number, discriminant);
+                                                     result.c.f_number, discriminant, log);
                             printf("\tOne real double root found:\n");
                             printf("Root is -> %lf\n", dblRoot);
                         }
@@ -53,10 +54,10 @@ int main(int argc, char const *argv[])
                         {
                             result.root_x1 = get_root_minus(result.a.f_number,
                                                              result.b.f_number,
-                                                             result.c.f_number, discriminant);
+                                                             result.c.f_number, discriminant,log);
                             result.root_x2 = get_root_plus(result.a.f_number,
                                                             result.b.f_number,
-                                                            result.c.f_number, discriminant);
+                                                            result.c.f_number, discriminant, log);
                             printf("Two real double roots found:");
                             printf("\n\tRoots at: %lf & %lf\n\n",
                                    result.root_x1, result.root_x2);
