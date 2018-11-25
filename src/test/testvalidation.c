@@ -18,9 +18,10 @@ int main(int argc, char const *argv[])
 
     int r1 = validation_floats(a_array, b_array, c_array, &a, &b, &c, log);
     printf("r1 -> %d\n\n", r1); // 1
+    show_precision_details(&a, &b, &c);
+   
 
-
-    a_array = "1.0e12";
+    a_array = "13.78e12";
     b_array = "9.9e12";
     c_array = "14.0e12";
     printf("A -> %s\n", a_array);
@@ -28,6 +29,7 @@ int main(int argc, char const *argv[])
     printf("C -> %s\n", c_array);
     r1 = validation_floats(a_array, b_array, c_array, &a, &b, &c, log);
     printf("r1 -> %d\n\n", r1); // 1
+    show_precision_details(&a, &b, &c);
 
 
     a_array = "inf";

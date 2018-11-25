@@ -5,6 +5,7 @@ typedef struct _number_parts
 {
     int integer_part_len;
     int decimals_part_len;
+    int contain_e;
     float f_number;
     double d_number;
     double diff;
@@ -19,13 +20,7 @@ typedef struct _roots_numbers
     double root_x2;
 } roots_numbers;
 
-typedef struct
-{
-    int max;   // size of str array
-    int len;   // legnth of string in str
-    int code;  // status code
-    char *str; // pointer to array of max bytes
-} Line;
+
 
 #define NLINE 100
 

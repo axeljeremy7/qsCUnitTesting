@@ -9,6 +9,7 @@ void init_variables(nummber_parts *a, nummber_parts *b, nummber_parts *c, roots_
 
 
 void new_line();
+void show_precision_details(nummber_parts *a, nummber_parts *b, nummber_parts *c);
 void get_precision_details(char *array, int *integer_part_len, 
                            int *decimals_part_len, FILE *fp);
 void get_precision(char *a_array, char *b_array, 

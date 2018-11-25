@@ -30,7 +30,7 @@ void get_precision_details(char *array, int *integer_part_len,
                            int *decimals_part_len, FILE *fp)
 {
     size_t len = strlen(array);
-    fprintf(fp, "Log Line 14: %s strlen(array) => %zu\n", array, len);
+    fprintf(fp, "LOG LINE 33: %s strlen(array) => %zu\n", array, len);
     if (len == 0)
     {
         return;
@@ -73,6 +73,26 @@ void get_precision(char *a_array, char *b_array,
                           &(c->decimals_part_len), fp);
 }
 
+void show_precision_details(nummber_parts *a, nummber_parts *b, nummber_parts *c){
+    printf("\tA\n"); 
+    printf("\tFloat value is -> %.*f\n", a->decimals_part_len, a->f_number); 
+    printf("\tDouble value is -> %.*lf\n", a->decimals_part_len, a->d_number); 
+    printf("\tThe difference is -> %.*lf\n", a->decimals_part_len, a->diff); 
+    printf("\n");
+
+    printf("\tB\n"); 
+    printf("\tFloat value is -> %.*f\n", b->decimals_part_len, b->f_number); 
+    printf("\tDouble value is -> %.*lf\n", b->decimals_part_len, b->d_number); 
+    printf("\tThe difference is -> %.*lf\n", b->decimals_part_len, b->diff); 
+    printf("\n");
+
+    printf("\tC\n"); 
+    printf("\tFloat value is -> %.*f\n", c->decimals_part_len, c->f_number); 
+    printf("\tDouble value is -> %.*lf\n", c->decimals_part_len, c->d_number); 
+    printf("\tThe difference is -> %.*lf\n", c->decimals_part_len, c->diff); 
+    printf("\n");
+}
+
 int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
 {
     float test = strtof(array, NULL);
@@ -81,7 +101,7 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
     int return_value = 1;
     fprintf(fp, "\n\n");
     fprintf(fp, "LINE 86: The float from the string is represented of %c is %f len-> %zu\n", id, test, len);
-    printf("\tThe float value of %c is represented as %f\n", id, test);
+    // printf("\tThe float value of %c is represented as %f\n", id, test);
     int integer_count = 0;
     int decimals_count = 0;
     int sign = 0;
@@ -128,9 +148,14 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
     {
         for (i = integer_count; i < len; i++)
         {
+            if (count_e > 1)
+            {
+                return_value = 5;
+            }
             if (array[i] == 'e' || array[i] == 'E')
             {
                 count_e++;
+                continue;
             }
             if (array[i] < 48 || array[i] > 57)
             {
@@ -139,15 +164,13 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
                 printf("The input for a is %s, which is invalid.\n", array);
                 break;
             }
-            if (count_e > 1)
-            {
-                return_value = 5;
-            }
+            
             decimals_count++;
         }
         fprintf(fp, "LOG LINE 142: count_e -> %d\n", count_e);
         fprintf(fp, "LOG LINE 143: sign -> %d\n", sign);
         fprintf(fp, "LOG LINE 143: decimals_count -> %d\n", decimals_count);
+        fprintf(fp, "LOG LINE 151: integer_count -> %d\n", integer_count);
     }
 
     if (return_value == 1)
@@ -156,7 +179,14 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
         {
             n->f_number = strtof(array, NULL);
             n->d_number = strtod(array, NULL);
+            fprintf(fp, "LOG LINE 151: integer_count -> %d\n", integer_count);
+            n->integer_part_len = integer_count - sign - 1;
+            n->decimals_part_len = decimals_count;
             n->diff = n->d_number - n->f_number;
+            if (count_e == 1){
+                n->contain_e = 1;
+                n->decimals_part_len = 32;
+            }
             fprintf(fp, "LOG LINE 159:The input for %c is %s is valid.\n",
                     id, array);
         }
