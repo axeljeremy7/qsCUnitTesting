@@ -1,23 +1,44 @@
-#include "main.h"
+#include "file_main.h"
 
-void init_var(nummber_parts *v);
+// begin
+
+void init_var(nummber_parts * v){
+    v->integer_part_len = 0;
+    v->decimals_part_len = 0;
+    v->f_number = 0;
+    v->d_number = 0;
+    v->diff = 0;
+}
+
 int main(int argc, char const *argv[])
 {
+    // v2
+    printf("argc: %d , argv[1]: %s, atoi(argv[1])): %d \n", argc, argv[1], atoi(argv[1]));
     FILE *fp;
-    fp = fopen("logs/user_logs.txt", "w");
-    char a_array[512];
-    char b_array[512];
-    char c_array[512];
+    if (atoi(argv[1]) == 1)
+    {
+        fp = fopen("logs/val1_logs.txt", "w");
+    }
+    else if (atoi(argv[1]) == 2)
+    {
+        fp = fopen("logs/val2_logs.txt", "w");
+    }
+    else
+    {
+        fp = fopen("logs/user_logs.txt", "w");
+    }
+    char a_array[1024];
+    char b_array[1024];
+    char c_array[1024];
 
     roots_numbers result;
 
     double d;
     int numRoots;
     nummber_parts a, b, c;
-
+    // only can be used with stdin from a file, not from terminal
     while (scanf("%s %s %s", a_array, b_array, c_array) == 3)
     {
-
         init_var(&a);
         result.a = a;
 
@@ -26,7 +47,6 @@ int main(int argc, char const *argv[])
 
         init_var(&c);
         result.c = c;
-
 
         printf("==> %s %s %s\n", a_array, b_array, c_array);
         fprintf(fp, "\nMAIN ==> %s %s %s\n", a_array, b_array, c_array);
@@ -86,13 +106,4 @@ int main(int argc, char const *argv[])
     // printf("\n:::::: %s %f\n"," 3.4e4" ,strtof("3.4e4",NULL));
     new_line();
     return 0;
-}
-
-void init_var(nummber_parts *v)
-{
-    v->integer_part_len = 0;
-    v->decimals_part_len = 0;
-    v->f_number = 0;
-    v->d_number = 0;
-    v->diff = 0;
 }

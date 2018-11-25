@@ -8,8 +8,8 @@ LDLIBS = -lm
 docker:
 	docker run -it -v "/Users/axeljeremy/Google Drive/CS-4900/QuadSolver/":/QuadSolver/ ubuntu:gcc
 
-main.o: main.h
-	${CC} -c ${CFLAGS} main.c ${LDLIBS}
+file_main.o: file_main.h
+	${CC} -c ${CFLAGS} file_main.c ${LDLIBS}
 
 quadFun.o: header.h quadFun.h
 	${CC} -c ${CFLAGS} quadFun.c ${LDLIBS}
@@ -23,8 +23,8 @@ test.o: variables.h header.h validation.h quadFun.h test.h
 test: test.o quadFun.o validation.o
 	${CC} test.o quadFun.o validation.o -o qsTest ${LDLIBS} ${CUNIT}
 
-qSolver: main.o quadFun.o validation.o main.h
-	${CC} main.o quadFun.o validation.o -o qSolver ${LDLIBS}
+qSolver: file_main.o quadFun.o validation.o file_main.h
+	${CC} file_main.o quadFun.o validation.o -o qSolver ${LDLIBS}
 
 gene:
 	${CC} -c ${CFLAGS} gennum.c ${LDLIBS}
