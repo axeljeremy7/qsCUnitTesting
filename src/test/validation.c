@@ -108,12 +108,13 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
             }
             else
             {
+                return_value = 2;
                 break;
             }
         }
         if (count_e > 1 || sign > 2)
         {
-            return_value = 2;
+            return_value = 3;
             break;
         }
         integer_count++;
@@ -122,7 +123,6 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
     fprintf(fp, "LOG LINE 121: count_e -> %d\n", count_e);
     fprintf(fp, "LOG LINE 122: sign -> %d\n", sign);
     fprintf(fp, "LOG LINE 123: integer_count -> %d\n", integer_count);
-    fprintf(fp, "LOG LINE 124\n\n");
 
     if (return_value == 1)
     {
@@ -134,13 +134,14 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
             }
             if (array[i] < 48 || array[i] > 57)
             {
-                return_value = 3;
+                return_value = 4;
                 fprintf(fp, "LOG LINE 137: The input for a is %s, which is invalid.\n", array);
+                printf("The input for a is %s, which is invalid.\n", array);
                 break;
             }
             if (count_e > 1)
             {
-                return_value = 4;
+                return_value = 5;
             }
             decimals_count++;
         }
@@ -167,7 +168,7 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
                    id, array);
         }
     }
-    fprintf(fp, "LOG LINE 171: The return_value %d\n", return_value);
+    fprintf(fp, "LOG LINE 171: The return_value %d, 1 means OK\n", return_value);
     return return_value;
 }
 

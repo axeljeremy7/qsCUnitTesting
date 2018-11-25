@@ -17,17 +17,47 @@ int main(int argc, char const *argv[])
     printf("C -> %s\n", c_array);
 
     int r1 = validation_floats(a_array, b_array, c_array, &a, &b, &c, log);
-    printf("r1 -> %d\n\n", r1);
+    printf("r1 -> %d\n\n", r1); // 1
 
 
-    a_array = "1.0e12 ";
+    a_array = "1.0e12";
     b_array = "9.9e12";
     c_array = "14.0e12";
     printf("A -> %s\n", a_array);
     printf("B -> %s\n", b_array);
     printf("C -> %s\n", c_array);
     r1 = validation_floats(a_array, b_array, c_array, &a, &b, &c, log);
-    printf("r1 -> %d\n\n", r1);
+    printf("r1 -> %d\n\n", r1); // 1
+
+
+    a_array = "inf";
+    b_array = "-inf";
+    c_array = "+inf";
+    printf("A -> %s\n", a_array);
+    printf("B -> %s\n", b_array);
+    printf("C -> %s\n", c_array);
+    r1 = validation_floats(a_array, b_array, c_array, &a, &b, &c, log);
+    printf("r1 -> %d\n\n", r1); // not 1
+
+    a_array = "+80";
+    b_array = "66o";
+    c_array = "7o";
+    printf("A -> %s\n", a_array);
+    printf("B -> %s\n", b_array);
+    printf("C -> %s\n", c_array);
+    r1 = validation_floats(a_array, b_array, c_array, &a, &b, &c, log);
+    printf("r1 -> %d\n\n", r1); // not 1
+
+    a_array = "80";
+    b_array = "77";
+    c_array = "9999";
+    printf("A -> %s\n", a_array);
+    printf("B -> %s\n", b_array);
+    printf("C -> %s\n", c_array);
+    r1 = validation_floats(a_array, b_array, c_array, &a, &b, &c, log);
+    printf("r1 -> %d\n\n", r1); // not 1
+
+    
 
     printf("ALL OK\n\n");
     return 0;
