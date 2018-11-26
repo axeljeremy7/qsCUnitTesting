@@ -18,16 +18,18 @@ run1:
 
 runall1:
 	./t1.sh	
-	
 
-quadFun.o: ../include/header.h ../include/quadFun.h
-	${CC} -c ${CFLAGS} quadFun.c ${LDLIBS}	
+cunit.o: ../include/cunit.h
+	${CC} -c ${CFLAGS} cunit.c ${LDLIBS}	
 
-testroots.o:
+quadFun.o: ../include/header.h ../include/quadFun.h 
+	${CC} -c ${CFLAGS} ../quadFun.c ${LDLIBS}	
+
+testroots.o: ../include/cunit.h
 	${CC} -c ${CFLAGS} testroots.c ${LDLIBS}
 
-testroots: testroots.o quadFun.o
-	${CC} testroots.o quadFun.o -o testroots ${LDLIBS}
+testroots: testroots.o quadFun.o cunit.o
+	${CC} testroots.o quadFun.o cunit.o -o testroots ${LDLIBS}
 
 run2:
 	./testroots 2> ../logs/test2_logs.txt
