@@ -1,5 +1,6 @@
 #include "include/main.h"
 
+int clean_stdin();
 int solve_equation_yes_no(FILE *log, char *response);
 int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *response);
 int exit_main(FILE *log, char *response);
@@ -11,7 +12,7 @@ int main(int argc, char const *argv[])
     FILE *log;
     log = stderr; //fopen("logs/user_logs.txt", "w");
 
-    char a_array[128], b_array[128], c_array[128];
+    char a_array[32], b_array[32], c_array[32];
     char response[2];
 
     roots_numbers result;
@@ -19,9 +20,15 @@ int main(int argc, char const *argv[])
     double discriminant;
     int num_roots;
     double machine_epsilon = get_machine_epsilon();
+    int again = 0;
+    int yn = 1 ;
     while (1)
     {
-        if (solve_equation_yes_no(log, response) == 1)
+        if (again == 0){
+            yn = solve_equation_yes_no(log, response);
+        }
+
+        if (yn == 1 || again == 1)
         {
             if (read_abc(log, a_array, b_array, c_array, response) == 1)
             {
@@ -33,20 +40,25 @@ int main(int argc, char const *argv[])
                     if (check_is_quadratic(result.a.f_number, log) == 1)
                     {
                         show_roots(result.a.f_number, result.b.f_number, result.c.f_number, log, &discriminant, &num_roots, &result);
+                        again = 0;
                         continue;
                     }
                     else
                     {
-                        break;
+                        again = 1;//break;
                     }
                 }
                 else
                 {
-                    break;
+                    again = 1;//break;
                 }
             }
             else
-                break;
+            {
+                again = 1;
+                //continue;
+            }
+                
         }
         else
             break;
@@ -58,7 +70,7 @@ int main(int argc, char const *argv[])
 
 int solve_equation_yes_no(FILE *log, char *response)
 {
-    printf("Do you want to solve a quadratic eqauation Ax^2 + Bx + B = 0 ? (Y/N):");
+    printf("Do you want to solve a quadratic equation Ax^2 + Bx + B = 0 ? (Y/N):");
     if (scanf("%1s", response) != EOF)
     {
         fprintf(log, "FILE: %s FUNC: %s LINE: %d: response[0] -> %c\n", __FILE__, __func__, __LINE__, response[0]);
@@ -77,7 +89,6 @@ int solve_equation_yes_no(FILE *log, char *response)
         {
             fprintf(log, "FILE: %s FUNC: %s LINE: %d: Input error: response must be a single character: Y or N\n", __FILE__, __func__, __LINE__);
             printf("Input error: response must be a single character: Y or N\n");
-            printf("EXITING\nRun again the program"); // TO DO HANDLE THIS PART
             return -1;
         }
     }
@@ -86,20 +97,35 @@ int solve_equation_yes_no(FILE *log, char *response)
 
 int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *response)
 {
-    printf("Enter A B C:");
-    if (scanf("%127s %127s %127s", a_array, b_array, c_array) == 3)
+    printf("Enter A B C: ");
+    char c;
+    // int args = -1;
+    // int args = scanf("%32s %32s %32s%c", a_array, b_array, c_array, &c);
+    // clean_stdin();
+    // printf("\n");
+    // fprintf(log, "FILE: %s FUNC: %s LINE: %d: args -> %d\n", __FILE__, __func__, __LINE__, args);
+    int r;
+    if ( scanf("%32s %32s %32s%c", a_array, b_array, c_array, &c) == 4 && c == '\n' && clean_stdin() )
     {
         fprintf(log, "FILE: %s FUNC: %s LINE: %d: A -> %s\n", __FILE__, __func__, __LINE__, a_array);
         fprintf(log, "FILE: %s FUNC: %s LINE: %d: B -> %s\n", __FILE__, __func__, __LINE__, b_array);
         fprintf(log, "FILE: %s FUNC: %s LINE: %d: C -> %s\n", __FILE__, __func__, __LINE__, c_array);
-        return 1;
+        r = 1;
     }
     else
     {
         fprintf(log, "FILE: %s FUNC: %s LINE: %d: Input error: You input is more than 3 variables\n", __FILE__, __func__, __LINE__);
         printf("Input error: You input is more than 3 variables\n");
+        r = 0;
     }
-    return 0;
+    // fprintf(log, "FILE: %s FUNC: %s LINE: %d: args -> %d  r -> %d c -> |%c|\n", __FILE__, __func__, __LINE__, args, r, c);
+    return r;
+}
+
+int clean_stdin()
+{
+    while (getchar()!='\n');
+    return 1;
 }
 
 int exit_main(FILE *log, char *response)

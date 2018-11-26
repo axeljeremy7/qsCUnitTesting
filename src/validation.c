@@ -56,7 +56,7 @@ void relative_error(float a, float b, FILE *log, double rerr)
         fprintf(log, "FILE: %s LINE %d: %24.16f !>= %24.16f relative error=%10.6e\n",__FILE__, __LINE__, a, b, rerr);
     }else
     {
-        fprintf(log,"FILE: %s LINE %d: rerr -> %g", __FILE__, __LINE__, rerr);
+        fprintf(log,"FILE: %s LINE %d: rerr -> %g\n", __FILE__, __LINE__, rerr);
     }
 }
 
@@ -68,7 +68,7 @@ void absolute_error(float a, float b, FILE *log, double aerr)
         fprintf(log, "FILE: %s LINE %d: %24.16f !>= %24.16f absolute error=%10.6e\n",__FILE__, __LINE__, a, b, aerr);
     }else 
     {
-        fprintf(log,"FILE: %s LINE %d: aerr -> %g", __FILE__, __LINE__, aerr);
+        fprintf(log,"FILE: %s LINE %d: aerr -> %g\n", __FILE__, __LINE__, aerr);
     }
 }
 
@@ -192,7 +192,7 @@ int validation_floats(char *array_a, char *array_b,
     int r3 = validate_float(array_c, c, fp, 'c');
     if (r1 + r2 + r3 != 3)
     {
-        printf("Invalid input for the A, B, C float values");
+        printf("Invalid input for the A, B, C float values\n");
         return 2;
     }
     fprintf(fp, "FILE: %s FUNC: %s LINE: %d: %d %d %d\n", __FILE__, __func__, __LINE__, r1, r2, r3);
