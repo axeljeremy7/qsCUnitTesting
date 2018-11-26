@@ -4,6 +4,7 @@ int solve_equation_yes_no(FILE *log, char *response);
 int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *response);
 int exit_main(FILE *log, char *response);
 int show_roots(float a, float b, float c, FILE *log, double *discriminant, int *num_roots, roots_numbers *result);
+double get_machine_epsilon();
 
 int main(int argc, char const *argv[])
 {
@@ -17,7 +18,7 @@ int main(int argc, char const *argv[])
     nummber_parts a, b, c;
     double discriminant;
     int num_roots;
-
+    double machine_epsilon = get_machine_epsilon();
     while (1)
     {
         if (solve_equation_yes_no(log, response) == 1)
@@ -28,7 +29,7 @@ int main(int argc, char const *argv[])
                 if (validation_floats(a_array, b_array, c_array, &a, &b, &c, log) == 1)
                 {
                     add_abc_to_result(&result, &a, &b, &c, log);
-                    show_precision_details(&(result.a), &(result.b), &(result.c));
+                    show_precision_details(&(result.a), &(result.b), &(result.c), machine_epsilon, log);
                     if (check_is_quadratic(result.a.f_number, log) == 1)
                     {
                         show_roots(result.a.f_number, result.b.f_number, result.c.f_number, log, &discriminant, &num_roots, &result);
@@ -133,6 +134,18 @@ int show_roots(float a, float b, float c, FILE *log, double *discriminant, int *
         printf("\n\tRoots at: %lf & %lf\n\n", result->root_x1, result->root_x2);
     }
     return *num_roots;
+}
+
+double get_machine_epsilon()
+{
+    double dm;
+    double macheps = 0.5;
+
+    while ((1.0 + (dm = macheps / 2.0)) != 1.0)
+    {
+        macheps = dm;
+    }
+    return macheps;
 }
 
 // dont remove yet
