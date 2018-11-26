@@ -59,8 +59,6 @@ int main(int argc, char const *argv[])
     r1 = validation_floats(a_array, b_array, c_array, &a, &b, &c, log);
     printf("r1 -> %d\n\n", r1); // not 1
 
-    
 
-    printf("ALL OK\n\n");
     return 0;
 }

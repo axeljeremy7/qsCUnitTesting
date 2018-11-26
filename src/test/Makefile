@@ -5,7 +5,7 @@ LDLIBS = -lm
 
 
 validation.o: ../include/header.h ../include/validation.h
-	${CC} -c ${CFLAGS} validation.c ${LDLIBS}
+	${CC} -c ${CFLAGS} ../validation.c ${LDLIBS}
 
 testvalidation.o: 
 	${CC} -c ${CFLAGS} testvalidation.c ${LDLIBS}	

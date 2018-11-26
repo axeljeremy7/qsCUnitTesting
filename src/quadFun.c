@@ -25,7 +25,7 @@ check_discrim(double d, FILE *log)
     } 
     else 
     {
-        printf("Two real double roots found:\n");
+        printf("\tTwo real double roots found:\n");
         return 2;
     } 
 }

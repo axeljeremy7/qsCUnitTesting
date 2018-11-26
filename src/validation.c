@@ -21,57 +21,9 @@ void init_variables(nummber_parts *a, nummber_parts *b, nummber_parts *c, roots_
     result->c = *c;
 }
 
-void new_line()
-{
-    printf("\n");
-}
 
-void get_precision_details(char *array, int *integer_part_len,
-                           int *decimals_part_len, FILE *fp)
+void show_precision_details(nummber_parts *a, nummber_parts *b, nummber_parts *c)
 {
-    size_t len = strlen(array);
-    fprintf(fp, "FILE: %s FUNC: %s LINE: %d  s -> %s strlen(array) => %zu\n", __FILE__,  __func__ ,  __LINE__, array, len);
-    if (len == 0)
-    {
-        return;
-    }
-    size_t i = 0;
-    int integer_count = 0;
-    int decimals_count = 0;
-    for (i = 0; i < len; i++)
-    {
-        // printf("%c, ", array[i]);
-        integer_count++;
-        if (array[i] == '.')
-        {
-            break;
-        }
-    }
-    for (i = integer_count; i < len; i++)
-    {
-        // printf("%c, ", array[i]);
-        decimals_count++;
-    }
-    integer_count--;
-    *integer_part_len = integer_count;
-    *decimals_part_len = decimals_count;
-    fprintf(fp, "FILE: %s FUNC: %s LINE: %d: integer_part_len => %d, %d\n",__FILE__,  __func__ ,  __LINE__, integer_count, *integer_part_len);
-    fprintf(fp, "FILE: %s FUNC: %s LINE: %d: decimals_part_len => %d, %d\n",__FILE__,  __func__ ,  __LINE__, decimals_count, *decimals_part_len);
-}
-
-void get_precision(char *a_array, char *b_array,
-                   char *c_array, nummber_parts *a,
-                   nummber_parts *b, nummber_parts *c, FILE *fp)
-{
-    get_precision_details(a_array, &(a->integer_part_len),
-                          &(a->decimals_part_len), fp);
-    get_precision_details(b_array, &(b->integer_part_len),
-                          &(b->decimals_part_len), fp);
-    get_precision_details(c_array, &(c->integer_part_len),
-                          &(c->decimals_part_len), fp);
-}
-
-void show_precision_details(nummber_parts *a, nummber_parts *b, nummber_parts *c){
     printf("\tA\n"); 
     printf("\tFloat value is -> %.*f\n", a->decimals_part_len, a->f_number); 
     printf("\tDouble value is -> %.*lf\n", a->decimals_part_len, a->d_number); 
@@ -225,40 +177,9 @@ void add_abc_to_result(roots_numbers *result, nummber_parts *a,
     result->c = *c;
 }
 
-void add_numbers_to_result(roots_numbers *result, nummber_parts *a,
-                           nummber_parts *b, nummber_parts *c,
-                           FILE *fp, char *a_array, char *b_array,
-                           char *c_array)
-{
-    result->a = *a;
-    result->b = *b;
-    result->c = *c;
-    // fprintf(fp, "Log LINE 112: %s\n",
-    //    "Checking if passing has been successful"); TODO: LATER TO IMPLEMENT
-    int p_a = result->a.decimals_part_len;
-    int p_b = result->b.decimals_part_len;
-    int p_c = result->c.decimals_part_len;
-    fprintf(fp, "For a => String: %s float: ", a_array);
-    fprintf(fp, "%0.*f double: %0.*lf diff: %0.*lf p: %d\n",
-            p_a, result->a.f_number, p_a, result->a.d_number,
-            p_a, result->a.diff, p_a);
-
-    fprintf(fp, "Log Line 159: ");
-    fprintf(fp, "For b => String: %s float: ", b_array);
-    fprintf(fp, "%0*f double: %0.*lf diff: %0.*lf p: %d\n",
-            p_b, result->b.f_number, p_b, result->b.d_number,
-            p_b, result->b.diff, p_b);
-
-    fprintf(fp, "Log Line 165: ");
-    fprintf(fp, "For c => String: %s float: ", c_array);
-    fprintf(fp, "%0.*f double: %0.*lf diff: %0.*lf p: %d\n",
-            p_c, result->c.f_number, p_c, result->c.d_number,
-            p_c, result->c.diff, p_c);
-}
 
 int check_is_quadratic(float a, FILE *fp)
 {
-    //if a is 0 - equation is not quadratic. Print error
     if (a == (float)0.0)
     {
         fprintf(fp, "ERROR IN LINE 178: ");

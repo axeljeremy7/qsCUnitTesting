@@ -30,9 +30,6 @@ qSolver: file_main.o quadFun.o validation.o
 main.o: include/main.h
 	${CC} -c ${CFLAGS} main.c ${LDLIBS}
 
-# newmain: main.o quadFun.o validation.o 
-# 	${CC} main.o quadFun.o validation.o -o newmain ${LDLIBS}
-
 newmain: main.o validation.o quadFun.o
 	${CC} main.o validation.o quadFun.o -o newmain ${LDLIBS}
 
