@@ -5,6 +5,8 @@ CFLAGS = -std=c99 -Wall -Werror -pedantic
 CUNIT = -lcunit
 LDLIBS = -lm
 
+install:
+	./setup.sh
 
 docker:
 	docker run -it -v "/Users/axeljeremy/Google Drive/CS-4900/QuadSolver":/QuadSolver/ ubuntu:gcc
