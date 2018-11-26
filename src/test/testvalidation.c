@@ -1,7 +1,7 @@
 #include "../include/validation.h"
 #include "../include/header.h"
 
-
+double get_machine_epsilon();
 int main(int argc, char const *argv[])
 {
     FILE *log;
@@ -9,6 +9,7 @@ int main(int argc, char const *argv[])
     char *a_array, *b_array, *c_array;
     nummber_parts a, b, c;
     // roots_numbers result;
+    double machine_epsilon = get_machine_epsilon();
     a_array = "-34.400067";
     b_array = "46.6565677";
     c_array = "56.111011";
@@ -18,7 +19,7 @@ int main(int argc, char const *argv[])
 
     int r1 = validation_floats(a_array, b_array, c_array, &a, &b, &c, log);
     printf("r1 -> %d\n\n", r1); // 1
-    show_precision_details(&a, &b, &c);
+    show_precision_details(&a, &b, &c,machine_epsilon,log);
    
 
     a_array = "13.78e12";
@@ -29,7 +30,7 @@ int main(int argc, char const *argv[])
     printf("C -> %s\n", c_array);
     r1 = validation_floats(a_array, b_array, c_array, &a, &b, &c, log);
     printf("r1 -> %d\n\n", r1); // 1
-    show_precision_details(&a, &b, &c);
+    show_precision_details(&a, &b, &c,machine_epsilon,log);
 
 
     a_array = "inf";
@@ -61,4 +62,16 @@ int main(int argc, char const *argv[])
 
 
     return 0;
+}
+
+double get_machine_epsilon()
+{
+    double dm;
+    double macheps = 0.5;
+
+    while ((1.0 + (dm = macheps / 2.0)) != 1.0)
+    {
+        macheps = dm;
+    }
+    return macheps;
 }

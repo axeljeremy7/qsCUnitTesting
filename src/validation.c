@@ -130,13 +130,14 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
             if (count_e > 1)
             {
                 return_value = 5;
+                break;
             }
             if (array[i] == 'e' || array[i] == 'E')
             {
                 count_e++;
                 continue;
             }
-            if (array[i] < 48 || array[i] > 57)
+            else if (array[i] < 48 || array[i] > 57)
             {
                 return_value = 4;
                 fprintf(fp, "LOG LINE 137: The input for a is %s, which is invalid.\n", array);
@@ -158,7 +159,6 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
         {
             n->f_number = strtof(array, NULL);
             n->d_number = strtod(array, NULL);
-            fprintf(fp, "FILE: %s FUNC: %s LINE: %d: integer_count -> %d\n", __FILE__, __func__, __LINE__, integer_count);
             n->integer_part_len = integer_count - sign - 1;
             n->decimals_part_len = decimals_count;
             n->diff = n->d_number - n->f_number;
