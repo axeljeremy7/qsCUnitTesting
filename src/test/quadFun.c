@@ -5,14 +5,14 @@ discrim(float a, float b, float c, FILE *log)
 {
     double d;
     d = ((double)b * (double)b) - ((double)4.0* (double)a * (double)c);
-    fprintf(log, "FILE: %s FUNC: %s LINE: %d: discrim -> %lf\n",  __FILE__,  __func__ ,  __LINE__, d);
+    fprintf(log, "FILE: %s FUNC: %s LINE: %d discrim -> %lf\n",  __FILE__,  __func__ ,  __LINE__, d);
     return d;
 }
 
 int 
 check_discrim(double d, FILE *log)
 {   
-    fprintf(log, "FILE: %s FUNC: %s LINE: %d: discrim -> %lf\n",  __FILE__,  __func__ ,  __LINE__, d);
+    fprintf(log, "FILE: %s FUNC: %s LINE: %d discrim -> %lf\n",  __FILE__,  __func__ ,  __LINE__, d);
     if (d < 0)
     {
         printf("\tNO REAL ROOTS\n\n");

@@ -8,7 +8,6 @@ int exit_main(FILE *log, char *response);
 int main(int argc, char const *argv[])
 {
     FILE *log;
-    printf("PASS LINE 7\n");
     log = stderr; //fopen("logs/user_logs.txt", "w");
 
     char a_array[128], b_array[128], c_array[128];
@@ -82,23 +81,21 @@ int solve_equation_yes_no(FILE *log, char *response)
     printf("Do you want to solve a quadratic eqauation Ax^2 + Bx + B = 0 ? (Y/N):");
     if (scanf("%1s", response) != EOF)
     {
-        fprintf(log, "obtained response -> %s\n", response);
-        fprintf(log, "response[0] -> %c\n", response[0]);
-        fprintf(log, "response[1] -> %c\n", response[1]);
+        fprintf(log, "FILE: %s FUNC: %s LINE: %d: response[0] -> %c\n", __FILE__,  __func__ ,  __LINE__, response[0]);
         if (strncmp(response, "Y", 1) == 0)
         {
-            fprintf(log, " Response is Y\n");
+            fprintf(log, "FILE: %s FUNC: %s LINE: %d: Response is Y\n", __FILE__,  __func__ ,  __LINE__);
             return 1;
         }
         else if (strncmp(response, "N", 1) == 0)
         {
-            fprintf(log, "Response is N\n");
+            fprintf(log, "FILE: %s FUNC: %s LINE: %d: Response is N\n", __FILE__,  __func__ ,  __LINE__);
             printf("EXITING\n");
             return 0;
         }
         else
         {
-            fprintf(log, "Input error: response must be a single character: Y or N\n");
+            fprintf(log, "FILE: %s FUNC: %s LINE: %d: Input error: response must be a single character: Y or N\n", __FILE__,  __func__ ,  __LINE__);
             printf("Input error: response must be a single character: Y or N\n");
             printf("EXITING\nRun again the program"); // TO DO HANDLE THIS PART
             return -1;
@@ -112,14 +109,14 @@ int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *respo
     printf("Enter A B C:");
     if (scanf("%127s %127s %127s", a_array, b_array, c_array) == 3)
     {
-        fprintf(log, "A -> %s\n", a_array);
-        fprintf(log, "B -> %s\n", b_array);
-        fprintf(log, "C -> %s\n", c_array);
+        fprintf(log, "FILE: %s FUNC: %s LINE: %d: A -> %s\n",__FILE__,  __func__ ,  __LINE__, a_array);
+        fprintf(log, "FILE: %s FUNC: %s LINE: %d: B -> %s\n",__FILE__,  __func__ ,  __LINE__, b_array);
+        fprintf(log, "FILE: %s FUNC: %s LINE: %d: C -> %s\n",__FILE__,  __func__ ,  __LINE__, c_array);
         return 1;
     }
     else
     {
-        fprintf(log, "Input error: You input is more than 3 variables\n");
+        fprintf(log, "FILE: %s FUNC: %s LINE: %d: Input error: You input is more than 3 variables\n",__FILE__,  __func__ ,  __LINE__);
         printf("Input error: You input is more than 3 variables\n");
     }
     return 0;
@@ -130,9 +127,7 @@ int exit_main(FILE *log, char *response)
     printf("You want to exit ? (Y/N):");
     if (scanf("%1s", response) != EOF)
     {
-        fprintf(log, "obtained response -> %s\n", response);
-        fprintf(log, "response[0] -> %c\n", response[0]);
-        fprintf(log, "response[1] -> %c\n", response[1]);
+        fprintf(log, "FILE: %s FUNC: %s LINE: %d: response[0] -> %c\n", __FILE__,  __func__ ,  __LINE__, response[0]);
         if (strncmp(response, "Y", 1) == 0)
         {
             printf("EXITING\n");

@@ -18,7 +18,23 @@ run1:
 
 runall1:
 	./t1.sh	
+	
+
+quadFun.o: ../include/header.h ../include/quadFun.h
+	${CC} -c ${CFLAGS} quadFun.c ${LDLIBS}	
+
+testroots.o:
+	${CC} -c ${CFLAGS} testroots.c ${LDLIBS}
+
+testroots: testroots.o quadFun.o
+	${CC} testroots.o quadFun.o -o testroots ${LDLIBS}
+
+run2:
+	./testroots 2> ../logs/test2_logs.txt
+
+runall2:
+	./t2.sh	
 
 .PHONY : clean
 clean:
-	rm -f *.o testvalidation
+	rm -f *.o testvalidation testroots
