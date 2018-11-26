@@ -4,23 +4,36 @@
 #include "header.h"
 #include "variables.h"
 
-void init_var(nummber_parts *v);
-void init_variables(nummber_parts *a, nummber_parts *b, nummber_parts *c, roots_numbers *result);
-void add_abc_to_result(roots_numbers *result, nummber_parts *a,
-                           nummber_parts *b, nummber_parts *c,
-                           FILE *fp);
+void 
+init_var(nummber_parts *v);
 
-void show_precision_details(nummber_parts *a, nummber_parts *b, nummber_parts *c, double err, FILE *log);
+void 
+init_variables(nummber_parts *a, nummber_parts *b, 
+               nummber_parts *c, roots_numbers *result);
 
-int validate_float(char *array, nummber_parts *n, FILE *fp, char id);
-int validation_floats(char *array_a, char *array_b, 
+void 
+add_abc_to_result(roots_numbers *result, nummber_parts *a,
+                  nummber_parts *b, nummber_parts *c, FILE *fp);
+
+void 
+show_precision_details(nummber_parts *a, nummber_parts *b, 
+                       nummber_parts *c, double err, FILE *log);
+
+int 
+validate_float(char *array, nummber_parts *n, FILE *fp, char id);
+
+int 
+validation_floats(char *array_a, char *array_b, 
                       char *array_c, nummber_parts *a, 
                       nummber_parts *b, nummber_parts *c, FILE *fp);
 
-int check_is_quadratic(float a, FILE *fp);
+int 
+check_is_quadratic(float a, FILE *fp);
 
-void relative_error(float a, float b, FILE *log, double rerr);
-void absolute_error(float a, float b, FILE *log, double aerr);
+void 
+relative_error(float a, float b, FILE *log, double rerr);
 
+void 
+absolute_error(float a, float b, FILE *log, double aerr);
 
 #endif

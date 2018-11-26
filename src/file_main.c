@@ -2,7 +2,8 @@
 
 // begin
 
-void init_var(nummber_parts * v){
+void 
+init_var(nummber_parts * v){
     v->integer_part_len = 0;
     v->decimals_part_len = 0;
     v->f_number = 0;
@@ -10,10 +11,12 @@ void init_var(nummber_parts * v){
     v->diff = 0;
 }
 
-int main(int argc, char const *argv[])
+int 
+main(int argc, char const *argv[])
 {
     // v2
-    printf("argc: %d , argv[1]: %s, atoi(argv[1])): %d \n", argc, argv[1], atoi(argv[1]));
+    printf("argc: %d , argv[1]: %s, atoi(argv[1])): %d \n",
+            argc, argv[1], atoi(argv[1]));
     FILE *fp;
     if (atoi(argv[1]) == 1)
     {

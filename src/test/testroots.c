@@ -2,7 +2,8 @@
 #include "../include/header.h"
 #include "../include/cunit.h"
 
-int main(int argc, char const *argv[])
+int 
+main(int argc, char const *argv[])
 {
     FILE *log;
     log = stderr;
