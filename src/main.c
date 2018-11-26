@@ -2,7 +2,7 @@
 
 int clean_stdin();
 int solve_equation_yes_no(FILE *log, char *response);
-int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *response, char *line);
+int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *response);
 int exit_main(FILE *log, char *response);
 int show_roots(float a, float b, float c, FILE *log, double *discriminant, int *num_roots, roots_numbers *result);
 double get_machine_epsilon();
@@ -10,11 +10,9 @@ double get_machine_epsilon();
 int main(int argc, char const *argv[])
 {
     FILE *log;
-    log = stderr; //fopen("logs/user_logs.txt", "w");
-
+    log = stderr; 
     char a_array[32], b_array[32], c_array[32];
     char response[2];
-
     roots_numbers result;
     nummber_parts a, b, c;
     double discriminant;
@@ -22,7 +20,8 @@ int main(int argc, char const *argv[])
     double machine_epsilon = get_machine_epsilon();
     int again = 0;
     int yn = 1 ;
-     char *line = malloc(100);
+    char *line = malloc(100);
+    printf("V5\n");
     while (1)
     {
         if (again == 0){
@@ -31,7 +30,7 @@ int main(int argc, char const *argv[])
 
         if (yn == 1 || again == 1)
         {
-            if (read_abc(log, a_array, b_array, c_array, response, line) == 1)
+            if (read_abc(log, a_array, b_array, c_array, response) == 1)
             {
                 init_variables(&a, &b, &c, &result);
                 if (validation_floats(a_array, b_array, c_array, &a, &b, &c, log) == 1)
@@ -72,7 +71,7 @@ int main(int argc, char const *argv[])
 
 int solve_equation_yes_no(FILE *log, char *response)
 {
-    printf("Do you want to solve a quadratic equation Ax^2 + Bx + B = 0 ? (Y for yes/ Any letter for exit):");
+    printf("Do you want to solve a quadratic equation Ax^2 + Bx + B = 0 ? (Y or y for yes/ Any letter for exit):");
     if (scanf("%1s", response) != EOF)
     {
         fprintf(log, "FILE: %s FUNC: %s LINE: %d: response[0] -> %c\n", __FILE__, __func__, __LINE__, response[0]);
@@ -81,16 +80,13 @@ int solve_equation_yes_no(FILE *log, char *response)
             fprintf(log, "FILE: %s FUNC: %s LINE: %d: Response is Y\n", __FILE__, __func__, __LINE__);
             return 1;
         }
-        // else if (strncmp(response, "N", 1) == 0)
-        // {
-        //     fprintf(log, "FILE: %s FUNC: %s LINE: %d: Response is N\n", __FILE__, __func__, __LINE__);
-        //     printf("EXITING\n");
-        //     return 0;
-        // }
+        else if (strncmp(response, "y", 1) == 0)
+        {
+            fprintf(log, "FILE: %s FUNC: %s LINE: %d: Response is y\n", __FILE__, __func__, __LINE__);
+            return 1;
+        }
         else
         {
-            // fprintf(log, "FILE: %s FUNC: %s LINE: %d: Input error: response must be a single character: Y or N\n", __FILE__, __func__, __LINE__);
-            // printf("Input error: response must be a single character: Y or N\n");
             printf("EXITING\n");
             return -1;
         }
@@ -98,20 +94,15 @@ int solve_equation_yes_no(FILE *log, char *response)
     return 0;
 }
 
-int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *response, char *line)
+int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *response)
 {
+    clean_stdin();
     printf("Enter A B C: ");
     char c ;
-    // int args = -1;
-    // char *line = malloc(100);
-    fgets(line, 100, stdin);
-    int args = sscanf(line,"%32s %32s %32s%c", a_array, b_array, c_array, &c);
-    // clean_stdin();
-    // fseek(stdin,SEEK_END,SEEK_END);
-    // printf("\n");
+    int args = scanf("%32s %32s %32s%c", a_array, b_array, c_array, &c);//sscanf(line,"%32s %32s %32s%c", a_array, b_array, c_array, &c);
     fprintf(log, "FILE: %s FUNC: %s LINE: %d: args -> %d\n", __FILE__, __func__, __LINE__, args);
     int r;
-    if ( args == 4 && c == '\n' )//&& c == '\n'
+    if ( args == 4 && c == '\n' )
     {
         fprintf(log, "FILE: %s FUNC: %s LINE: %d: A -> %s\n", __FILE__, __func__, __LINE__, a_array);
         fprintf(log, "FILE: %s FUNC: %s LINE: %d: B -> %s\n", __FILE__, __func__, __LINE__, b_array);
@@ -144,6 +135,7 @@ int clean_stdin()
 int exit_main(FILE *log, char *response)
 {
     printf("You want to exit ? (Y/N):");
+    
     if (scanf("%1s", response) != EOF)
     {
         fprintf(log, "FILE: %s FUNC: %s LINE: %d: response[0] -> %c\n", __FILE__, __func__, __LINE__, response[0]);
