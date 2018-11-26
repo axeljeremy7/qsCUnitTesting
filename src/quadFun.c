@@ -15,14 +15,17 @@ check_discrim(double d, FILE *log)
     fprintf(log, "FILE: %s FUNC: %s LINE: %d discrim -> %lf\n",  __FILE__,  __func__ ,  __LINE__, d);
     if (d < 0)
     {
+        printf("\tNO REAL ROOTS\n\n");
         return 0;
     } 
     else if (d == 0)
     {
+        printf("\tOne real double root found:\n");
         return 1;
     } 
     else 
     {
+        printf("Two real double roots found:");
         return 2;
     } 
 }
