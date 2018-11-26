@@ -99,11 +99,6 @@ int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *respo
 {
     printf("Enter A B C: ");
     char c;
-    // int args = -1;
-    // int args = scanf("%32s %32s %32s%c", a_array, b_array, c_array, &c);
-    // clean_stdin();
-    // printf("\n");
-    // fprintf(log, "FILE: %s FUNC: %s LINE: %d: args -> %d\n", __FILE__, __func__, __LINE__, args);
     int r;
     if ( scanf("%32s %32s %32s%c", a_array, b_array, c_array, &c) == 4 && c == '\n' && clean_stdin() )
     {
@@ -118,7 +113,6 @@ int read_abc(FILE *log, char *a_array, char *b_array, char *c_array, char *respo
         printf("Input error: You input is more than 3 variables\n");
         r = 0;
     }
-    // fprintf(log, "FILE: %s FUNC: %s LINE: %d: args -> %d  r -> %d c -> |%c|\n", __FILE__, __func__, __LINE__, args, r, c);
     return r;
 }
 
