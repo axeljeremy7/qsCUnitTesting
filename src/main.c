@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
     double machine_epsilon = get_machine_epsilon();
     int again = 0;
     int yn = 1 ;
-    char *line = malloc(100);
+    // char *line = malloc(100);
     printf("V5\n");
     while (1)
     {
@@ -63,7 +63,7 @@ int main(int argc, char const *argv[])
         else
             break;
     }
-    free(line);
+    // free(line);
     fclose(log);
     printf("\n");
     return 0;
