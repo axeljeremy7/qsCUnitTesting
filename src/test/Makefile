@@ -4,10 +4,10 @@ CFLAGS = -std=c99 -Wall -Werror -pedantic
 LDLIBS = -lm
 
 
-validation.o: ../include/header.h ../include/validation.h
+validation.o: ../include/header.h ../include/validation.h ../validation.c
 	${CC} -c ${CFLAGS} ../validation.c ${LDLIBS}
 
-testvalidation.o: 
+testvalidation.o: testvalidation.c
 	${CC} -c ${CFLAGS} testvalidation.c ${LDLIBS}	
 
 testvalidation: testvalidation.o validation.o
@@ -36,6 +36,9 @@ run2:
 
 runall2:
 	./t2.sh	
+
+systemtest:
+	.././newmain < test1.in 2> ../logs/test1.out
 
 .PHONY : clean
 clean:

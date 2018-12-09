@@ -14,13 +14,13 @@ docker:
 file_main.o: include/file_main.h
 	${CC} -c ${CFLAGS} file_main.c ${LDLIBS}
 
-quadFun.o: include/header.h include/quadFun.h
+quadFun.o: include/header.h include/quadFun.h quadFun.c
 	${CC} -c ${CFLAGS} quadFun.c ${LDLIBS}
 
-validation.o: include/header.h include/validation.h
+validation.o: include/header.h include/validation.h validation.c
 	${CC} -c ${CFLAGS} validation.c ${LDLIBS}
 
-test.o: variables.h header.h validation.h quadFun.h test.h
+test.o: variables.h header.h validation.h quadFun.h test.h test.c
 	${CC} -c ${CFLAGS} test.c ${LDLIBS} ${CUNIT}
 
 test: test.o quadFun.o validation.o
@@ -29,7 +29,7 @@ test: test.o quadFun.o validation.o
 qSolver: file_main.o quadFun.o validation.o 
 	${CC} file_main.o quadFun.o validation.o -o qSolver ${LDLIBS}
 
-main.o: include/main.h
+main.o: include/main.h main.c
 	${CC} -c ${CFLAGS} main.c ${LDLIBS}
 
 newmain: main.o validation.o quadFun.o

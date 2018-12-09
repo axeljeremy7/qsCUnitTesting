@@ -6,25 +6,26 @@ int read_abc(FILE *log, char *a_array,
     char *b_array, char *c_array, char *response);
 int exit_main(FILE *log, char *response);
 int show_roots(float a, float b, float c, FILE *log, 
-    double *discriminant, int *num_roots, roots_numbers *result);
+    double *discriminant, int *num_roots, roots_numbers *result, FILE *output);
 double get_machine_epsilon();
 
 int main(int argc, char const *argv[])
 {
     FILE *log;
-    log = stderr; 
+    FILE * output;
+    output = fopen("./logs/roots_main4", "w");
+    log = stderr; // std error output
     char a_array[32], b_array[32], c_array[32];
     char response[2];
     roots_numbers result;
     nummber_parts a, b, c;
     double discriminant;
     int num_roots;
-    double machine_epsilon = get_machine_epsilon();
+    double machine_epsilon = 10.0*get_machine_epsilon();
     int again = 0;
     int yn = 1;
     int run = 1;
-    // char *line = malloc(100);
-    printf("V5\n");
+  
     while (1)
     {
         if (again == 0)
@@ -51,7 +52,7 @@ int main(int argc, char const *argv[])
                     {
                         show_roots(result.a.f_number, result.b.f_number, 
                                    result.c.f_number, log, &discriminant, 
-                                   &num_roots, &result);
+                                   &num_roots, &result, output);
                         again = 0;
                         continue;
                     }
@@ -76,6 +77,7 @@ int main(int argc, char const *argv[])
             break;
     }
     // free(line);
+    fclose(output);
     fclose(log);
     printf("\n");
     return 0;
@@ -86,13 +88,13 @@ int solve_equation_yes_no(FILE *log, char *response, int run)
     if (run == 1)
     {
         printf("\nDo you want to solve a quadratic equation ");
-        printf("(Ax^2 + Bx + B = 0)?");
+        printf("(Ax^2 + Bx + C = 0)?");
         printf("\n[Y or y for yes | Any other letter to exit]: ");  
     }
     else
     {
         printf("\nDo you want to solve another quadratic equation ");
-        printf("(Ax^2 + Bx + B = 0)?");
+        printf("(Ax^2 + Bx + C = 0)?");
         printf("\n[Y or y for yes | Any other letter to exit]: ");  
     }
     
@@ -165,12 +167,6 @@ int
 clean_stdin()
 {
     while (getchar()!='\n');
-    // int i = 0;
-    // while(i < 3)
-    // {
-    //     getchar();
-    //     i++;
-    // }
     return 1;
 }
 
@@ -196,7 +192,7 @@ exit_main(FILE *log, char *response)
 int 
 show_roots(float a, float b, float c, 
            FILE *log, double *discriminant, 
-           int *num_roots, roots_numbers *result)
+           int *num_roots, roots_numbers *result, FILE *output)
 {
     printf("\n\t\t    Results\n");
     printf("\n----------------------------------------------------\n\n");
@@ -206,13 +202,15 @@ show_roots(float a, float b, float c,
     {
         result->root_x1 = get_root_minus(a, b, c, *discriminant, log);
         printf("\n\tRoots at: %lf \n", result->root_x1);
+        fprintf(output, "%.7lf\n", result->root_x1);
     }
     else if (*num_roots == 2)
     {
         result->root_x1 = get_root_minus(a, b, c, *discriminant, log);
         result->root_x2 = get_root_plus(a, b, c, *discriminant, log);
-        printf("\n\tRoots at: %lf & %lf\n", 
+        printf("\n\tRoots at: %.7lf & %.7lf\n", 
            result->root_x1, result->root_x2);
+        fprintf(output, "%.7lf %.7lf\n", result->root_x1, result->root_x2);
     }
     printf("\n----------------------------------------------------\n");
     return *num_roots;

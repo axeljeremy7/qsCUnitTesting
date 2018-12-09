@@ -69,7 +69,7 @@ show_precision_details(nummber_parts *a, nummber_parts *b,
     printf("\tDouble value is -> %.*lf\n", 
            c->decimals_part_len, c->d_number);
 
-    printf("\tThe difference is -> %.*lf or %g\n", 
+    printf("\tThe difference is -> %.*lf or %10.6e\n", 
            c->decimals_part_len, c->diff, c->diff);
 
     relative_error( c->f_number, c->d_number, log, err);
@@ -81,7 +81,8 @@ void
 relative_error(float a, float b, FILE *log, double rerr)
 {
     if (fabs(a - b) / (fabs(a) + fabs(b)) > rerr)
-    {
+    {   
+        printf("\tThe relative error:\n");
         printf("\t-> %24.16f !>= %24.16f relative error=%10.6e\n", 
                 a, b, rerr);
         fprintf(log, "FILE: %s LINE %d: ",__FILE__, __LINE__);
@@ -99,7 +100,8 @@ void
 absolute_error(float a, float b, FILE *log, double aerr)
 {
     if (fabs(a - b) > aerr)
-    {
+    {   
+        printf("\tThe absolute error:\n");
         printf("\t-> %24.16f !>= %24.16f relative error=%10.6e\n", 
                 a, b, aerr);
         fprintf(log, "FILE: %s LINE %d: ",__FILE__, __LINE__);
@@ -145,7 +147,7 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
             {
                 count_e++;
             }
-            else if (array[i] == '-')
+            else if (array[i] == '-' || array[i] == '+')
             {
                 sign++;
             }
@@ -174,11 +176,6 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
     {
         for (i = integer_count; i < len; i++)
         {
-            if (count_e > 1)
-            {
-                return_value = 5;
-                break;
-            }
             if (array[i] == 'e' || array[i] == 'E')
             {
                 count_e++;
@@ -190,6 +187,11 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
                 fprintf(fp, "LOG LINE 137: The input for a ");
                 fprintf(fp, "is %s, which is invalid.\n", array);
                 printf("The input for a is %s, which is invalid.\n", array);
+                break;
+            }
+            if (count_e > 1)
+            {
+                return_value = 5;
                 break;
             }
 
