@@ -9,8 +9,18 @@ INPUT INFO:
 
 	INPUT LIMITS:
 
-		As inputs are NORMALIZED FLOAT values, entered input must not exceed ±3.4E+38.
-		The smallest positive value allowed is 1.2E-38.
+		As inputs are NORMALIZED FLOAT values, 
+		FLT_RADIX    = 2
+		DECIMAL_DIG  = 37
+		FLT_MIN      = 1.175494e-38
+		FLT_MAX      = 3.402823e+38
+		FLT_EPSILON  = 1.192093e-07
+		FLT_MIN_EXP  = -125
+		FLT_MIN_10_EXP  = -37
+		FLT_MAX_EXP     = 128
+		FLT_MAX_10_EXP  = 38
+
+		
 
 	EXAMPLE GOOD INPUT:
 		
@@ -18,9 +28,12 @@ INPUT INFO:
 		
 	EXAMPLE BAD INPUT:
 		
-		a4 12.1234567 3.4e+39 - Illegal character value, 
-					value out of range of precision,
-					value greater than maximum.
+		a4 12.1234567 3.4e+39
+		inf inf inf
+		3E.e e.ee 3.e-44-e3
+		Illegal character value, 
+		value out of range of precision,
+		value out of limits.
 		
 
 OUTPUT INFO:
@@ -35,25 +48,13 @@ OUTPUT INFO:
 		As output values are NORMALIZED DOUBLE values, output cannot exceed ±1.7E+308.
 		The smallest positive value allowed is 2.3E-308.
 
+	MORE INFORMATIO:
+		More information about the details and precision of the numbers, calculations,
+		and the program can be found in /src/logs/user_logs.txt
+
 
 HOW TO USE:
 
-	This program is designed to take input from STDIN, which is redirected to a file. 
-	To use this program, simply enter your a, b, and c values in separate single lines in 
-	'input/user_input.in'. Then, type 'make userrun' in the terminal. This will compile the 
-	quad solver program and run it using the 'user_input.in' file. Your results will be in 
-	the file 'output/user_output.out'.
-
-	Take heed of input information above, as the program will output errors in the 
-	'logs/userlogs.txt' file with information on why it failed.
-
-	EXAMPLE:
-
-		user_input.in
-		--------------
-		9 12 4
-		4.0 6.0 18.0
-
-		terminal
-		--------------
-		.../src$ make userrun
+	Use the command:
+		make quadSolver
+	Or use the installation procedure after you download the program

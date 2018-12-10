@@ -1,2 +1,5 @@
-# YO YO
-https://www.gnu.org/prep/standards/html_node/Writing-C.html
+# Quadratic Solver program in C
+## The main purpose of this program is to solve quadratic equations based on float input values.
+## The second goal is to understand the precision floating point calculations.
+## The third goal is to do testing procedures in C.
+### This program follow: https://www.gnu.org/prep/standards/html_node/Writing-C.html
