@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
 {
     FILE *log;
     FILE * output;
-    output = fopen("./logs/roots_main4", "w");
+    output = fopen("the_roots_obtained", "w");
     log = stderr; // std error output
     char a_array[32], b_array[32], c_array[32];
     char response[2];
@@ -208,7 +208,7 @@ show_roots(float a, float b, float c,
     {
         result->root_x1 = get_root_minus(a, b, c, *discriminant, log);
         result->root_x2 = get_root_plus(a, b, c, *discriminant, log);
-        printf("\n\tRoots at: %.7lf & %.7lf\n", 
+        printf("\n\tRoots at: %.8lf & %.8lf\n", 
            result->root_x1, result->root_x2);
         fprintf(output, "%.7lf %.7lf\n", result->root_x1, result->root_x2);
     }

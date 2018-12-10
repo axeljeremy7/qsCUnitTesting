@@ -13,7 +13,7 @@ testvalidation.o: testvalidation.c
 testvalidation: testvalidation.o validation.o
 	${CC} testvalidation.o validation.o -o testvalidation ${LDLIBS}
 
-run1:
+run1: testvalidation
 	./testvalidation 2> ../logs/test1_logs.txt
 
 runall1:
@@ -38,7 +38,7 @@ runall2:
 	./t2.sh	
 
 systemtest:
-	.././newmain < test1.in 2> ../logs/test1.out
+	.././newmain < test.in.txt 2> ../logs/test1.out
 
 .PHONY : clean
 clean:

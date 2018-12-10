@@ -2,8 +2,8 @@ FILE: main.c FUNC: solve_equation_yes_no LINE: 104: response[0] -> y
 FILE: main.c FUNC: solve_equation_yes_no LINE: 114: Response is y
 FILE: main.c FUNC: read_abc LINE: 140: args -> 4
 FILE: main.c FUNC: read_abc LINE: 145: A -> 1
-FILE: main.c FUNC: read_abc LINE: 147: B -> -7.8596044
-FILE: main.c FUNC: read_abc LINE: 149: C -> 14.88076358
+FILE: main.c FUNC: read_abc LINE: 147: B -> -57.3696364353372
+FILE: main.c FUNC: read_abc LINE: 149: C -> 822.685262798464
 FILE: main.c FUNC: read_abc LINE: 161: args -> 4  r -> 1 c -> |
 |
 
@@ -20,119 +20,7 @@ FILE: validation.c FUNC: validate_float LINE: 225: The input for a is 1 is valid
 FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
 
 
-FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of b is -7.859604 len-> 10
-FILE: validation.c FUNC: validate_float LINE: 145: array[0] -> - 
-FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
-FILE: validation.c FUNC: validate_float LINE: 171: sign -> 1
-FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 3
-FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
-FILE: validation.c FUNC: validate_float LINE: 203: sign -> 1
-FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 7
-FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 3
-FILE: validation.c FUNC: validate_float LINE: 225: The input for b is -7.8596044 is valid.
-FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
-
-
-FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of c is 14.880764 len-> 11
-FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
-FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
-FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 3
-FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
-FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
-FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 8
-FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 3
-FILE: validation.c FUNC: validate_float LINE: 225: The input for c is 14.88076358 is valid.
-FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
-FILE: validation.c FUNC: validation_floats LINE: 258: 1 1 1
-FILE: validation.c LINE 95: rerr -> 2.22045e-15
-FILE: validation.c LINE 114: aerr -> 2.22045e-15
-FILE: validation.c LINE 95: rerr -> 2.22045e-15
-FILE: validation.c LINE 114: aerr -> 2.22045e-15
-FILE: validation.c LINE 95: rerr -> 2.22045e-15
-FILE: validation.c LINE 114: aerr -> 2.22045e-15
-FILE: quadFun.c FUNC: discrim LINE: 9: discrim -> 2.250325
-FILE: quadFun.c FUNC: check_discrim LINE: 17: discrim -> 2.250325
-FILE: quadFun.c FUNC: get_root_minus LINE: 41 root- -> 3.179748
-FILE: quadFun.c FUNC: get_root_plus LINE: 51 root+ -> 4.679856
-FILE: main.c FUNC: solve_equation_yes_no LINE: 104: response[0] -> y
-FILE: main.c FUNC: solve_equation_yes_no LINE: 114: Response is y
-FILE: main.c FUNC: read_abc LINE: 140: args -> 4
-FILE: main.c FUNC: read_abc LINE: 145: A -> 1
-FILE: main.c FUNC: read_abc LINE: 147: B -> -7.89898789696609
-FILE: main.c FUNC: read_abc LINE: 149: C -> 14.789867968975945
-FILE: main.c FUNC: read_abc LINE: 161: args -> 4  r -> 1 c -> |
-|
-
-
-FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of a is 1.000000 len-> 1
-FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
-FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
-FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 1
-FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
-FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
-FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 0
-FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 1
-FILE: validation.c FUNC: validate_float LINE: 225: The input for a is 1 is valid.
-FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
-
-
-FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of b is -7.898988 len-> 17
-FILE: validation.c FUNC: validate_float LINE: 145: array[0] -> - 
-FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
-FILE: validation.c FUNC: validate_float LINE: 171: sign -> 1
-FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 3
-FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
-FILE: validation.c FUNC: validate_float LINE: 203: sign -> 1
-FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 14
-FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 3
-FILE: validation.c FUNC: validate_float LINE: 225: The input for b is -7.89898789696609 is valid.
-FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
-
-
-FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of c is 14.789868 len-> 18
-FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
-FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
-FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 3
-FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
-FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
-FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 15
-FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 3
-FILE: validation.c FUNC: validate_float LINE: 225: The input for c is 14.789867968975945 is valid.
-FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
-FILE: validation.c FUNC: validation_floats LINE: 258: 1 1 1
-FILE: validation.c LINE 95: rerr -> 2.22045e-15
-FILE: validation.c LINE 114: aerr -> 2.22045e-15
-FILE: validation.c LINE 95: rerr -> 2.22045e-15
-FILE: validation.c LINE 114: aerr -> 2.22045e-15
-FILE: validation.c LINE 95: rerr -> 2.22045e-15
-FILE: validation.c LINE 114: aerr -> 2.22045e-15
-FILE: quadFun.c FUNC: discrim LINE: 9: discrim -> 3.234534
-FILE: quadFun.c FUNC: check_discrim LINE: 17: discrim -> 3.234534
-FILE: quadFun.c FUNC: get_root_minus LINE: 41 root- -> 3.050253
-FILE: quadFun.c FUNC: get_root_plus LINE: 51 root+ -> 4.848734
-FILE: main.c FUNC: solve_equation_yes_no LINE: 104: response[0] -> y
-FILE: main.c FUNC: solve_equation_yes_no LINE: 114: Response is y
-FILE: main.c FUNC: read_abc LINE: 140: args -> 4
-FILE: main.c FUNC: read_abc LINE: 145: A -> 1
-FILE: main.c FUNC: read_abc LINE: 147: B -> -85.2426628813653
-FILE: main.c FUNC: read_abc LINE: 149: C -> 1615.63995571625
-FILE: main.c FUNC: read_abc LINE: 161: args -> 4  r -> 1 c -> |
-|
-
-
-FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of a is 1.000000 len-> 1
-FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
-FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
-FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 1
-FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
-FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
-FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 0
-FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 1
-FILE: validation.c FUNC: validate_float LINE: 225: The input for a is 1 is valid.
-FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
-
-
-FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of b is -85.242661 len-> 17
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of b is -57.369637 len-> 17
 FILE: validation.c FUNC: validate_float LINE: 145: array[0] -> - 
 FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
 FILE: validation.c FUNC: validate_float LINE: 171: sign -> 1
@@ -141,19 +29,19 @@ FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
 FILE: validation.c FUNC: validate_float LINE: 203: sign -> 1
 FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 13
 FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 4
-FILE: validation.c FUNC: validate_float LINE: 225: The input for b is -85.2426628813653 is valid.
+FILE: validation.c FUNC: validate_float LINE: 225: The input for b is -57.3696364353372 is valid.
 FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
 
 
-FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of c is 1615.640015 len-> 16
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of c is 822.685242 len-> 16
 FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
 FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
-FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 4
 FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
 FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
-FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 11
-FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 5
-FILE: validation.c FUNC: validate_float LINE: 225: The input for c is 1615.63995571625 is valid.
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 12
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 225: The input for c is 822.685262798464 is valid.
 FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
 FILE: validation.c FUNC: validation_floats LINE: 258: 1 1 1
 FILE: validation.c LINE 95: rerr -> 2.22045e-15
@@ -162,8 +50,513 @@ FILE: validation.c LINE 95: rerr -> 2.22045e-15
 FILE: validation.c LINE 114: aerr -> 2.22045e-15
 FILE: validation.c LINE 95: rerr -> 2.22045e-15
 FILE: validation.c LINE 114: aerr -> 2.22045e-15
-FILE: quadFun.c FUNC: discrim LINE: 9: discrim -> 803.751114
-FILE: quadFun.c FUNC: check_discrim LINE: 17: discrim -> 803.751114
-FILE: quadFun.c FUNC: get_root_minus LINE: 41 root- -> 28.446078
-FILE: quadFun.c FUNC: get_root_plus LINE: 51 root+ -> 56.796583
+FILE: quadFun.c FUNC: discrim LINE: 9: discrim -> 0.534229
+FILE: quadFun.c FUNC: check_discrim LINE: 17: discrim -> 0.534229
+FILE: quadFun.c FUNC: get_root_minus LINE: 41 root- -> 28.319363
+FILE: quadFun.c FUNC: get_root_plus LINE: 51 root+ -> 29.050273
+FILE: main.c FUNC: solve_equation_yes_no LINE: 104: response[0] -> y
+FILE: main.c FUNC: solve_equation_yes_no LINE: 114: Response is y
+FILE: main.c FUNC: read_abc LINE: 140: args -> 4
+FILE: main.c FUNC: read_abc LINE: 145: A -> 1
+FILE: main.c FUNC: read_abc LINE: 147: B -> -103.132981966997
+FILE: main.c FUNC: read_abc LINE: 149: C -> 2000.44746694514
+FILE: main.c FUNC: read_abc LINE: 161: args -> 4  r -> 1 c -> |
+|
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of a is 1.000000 len-> 1
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 0
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 225: The input for a is 1 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of b is -103.132980 len-> 17
+FILE: validation.c FUNC: validate_float LINE: 145: array[0] -> - 
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 12
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 225: The input for b is -103.132981966997 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of c is 2000.447510 len-> 16
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 11
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 225: The input for c is 2000.44746694514 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+FILE: validation.c FUNC: validation_floats LINE: 258: 1 1 1
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: quadFun.c FUNC: discrim LINE: 9: discrim -> 2634.621596
+FILE: quadFun.c FUNC: check_discrim LINE: 17: discrim -> 2634.621596
+FILE: quadFun.c FUNC: get_root_minus LINE: 41 root- -> 25.902208
+FILE: quadFun.c FUNC: get_root_plus LINE: 51 root+ -> 77.230773
+FILE: main.c FUNC: solve_equation_yes_no LINE: 104: response[0] -> y
+FILE: main.c FUNC: solve_equation_yes_no LINE: 114: Response is y
+FILE: main.c FUNC: read_abc LINE: 140: args -> 4
+FILE: main.c FUNC: read_abc LINE: 145: A -> 1
+FILE: main.c FUNC: read_abc LINE: 147: B -> -35.1874742821585
+FILE: main.c FUNC: read_abc LINE: 149: C -> 291.134462103706
+FILE: main.c FUNC: read_abc LINE: 161: args -> 4  r -> 1 c -> |
+|
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of a is 1.000000 len-> 1
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 0
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 225: The input for a is 1 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of b is -35.187473 len-> 17
+FILE: validation.c FUNC: validate_float LINE: 145: array[0] -> - 
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 13
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 225: The input for b is -35.1874742821585 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of c is 291.134460 len-> 16
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 12
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 225: The input for c is 291.134462103706 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+FILE: validation.c FUNC: validation_floats LINE: 258: 1 1 1
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: quadFun.c FUNC: discrim LINE: 9: discrim -> 73.620435
+FILE: quadFun.c FUNC: check_discrim LINE: 17: discrim -> 73.620435
+FILE: quadFun.c FUNC: get_root_minus LINE: 41 root- -> 13.303619
+FILE: quadFun.c FUNC: get_root_plus LINE: 51 root+ -> 21.883854
+FILE: main.c FUNC: solve_equation_yes_no LINE: 104: response[0] -> y
+FILE: main.c FUNC: solve_equation_yes_no LINE: 114: Response is y
+FILE: main.c FUNC: read_abc LINE: 140: args -> 4
+FILE: main.c FUNC: read_abc LINE: 145: A -> 1
+FILE: main.c FUNC: read_abc LINE: 147: B -> -91.380625129704
+FILE: main.c FUNC: read_abc LINE: 149: C -> 2054.95767611543
+FILE: main.c FUNC: read_abc LINE: 161: args -> 4  r -> 1 c -> |
+|
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of a is 1.000000 len-> 1
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 0
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 225: The input for a is 1 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of b is -91.380623 len-> 16
+FILE: validation.c FUNC: validate_float LINE: 145: array[0] -> - 
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 12
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 225: The input for b is -91.380625129704 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of c is 2054.957764 len-> 16
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 11
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 225: The input for c is 2054.95767611543 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+FILE: validation.c FUNC: validation_floats LINE: 258: 1 1 1
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: quadFun.c FUNC: discrim LINE: 9: discrim -> 130.587180
+FILE: quadFun.c FUNC: check_discrim LINE: 17: discrim -> 130.587180
+FILE: quadFun.c FUNC: get_root_minus LINE: 41 root- -> 39.976574
+FILE: quadFun.c FUNC: get_root_plus LINE: 51 root+ -> 51.404049
+FILE: main.c FUNC: solve_equation_yes_no LINE: 104: response[0] -> y
+FILE: main.c FUNC: solve_equation_yes_no LINE: 114: Response is y
+FILE: main.c FUNC: read_abc LINE: 140: args -> 4
+FILE: main.c FUNC: read_abc LINE: 145: A -> 1
+FILE: main.c FUNC: read_abc LINE: 147: B -> -96.4158218006732
+FILE: main.c FUNC: read_abc LINE: 149: C -> 1906.47179692807
+FILE: main.c FUNC: read_abc LINE: 161: args -> 4  r -> 1 c -> |
+|
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of a is 1.000000 len-> 1
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 0
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 225: The input for a is 1 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of b is -96.415825 len-> 17
+FILE: validation.c FUNC: validate_float LINE: 145: array[0] -> - 
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 13
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 225: The input for b is -96.4158218006732 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of c is 1906.471802 len-> 16
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 11
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 225: The input for c is 1906.47179692807 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+FILE: validation.c FUNC: validation_floats LINE: 258: 1 1 1
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: quadFun.c FUNC: discrim LINE: 9: discrim -> 1670.124082
+FILE: quadFun.c FUNC: check_discrim LINE: 17: discrim -> 1670.124082
+FILE: quadFun.c FUNC: get_root_minus LINE: 41 root- -> 27.774337
+FILE: quadFun.c FUNC: get_root_plus LINE: 51 root+ -> 68.641488
+FILE: main.c FUNC: solve_equation_yes_no LINE: 104: response[0] -> y
+FILE: main.c FUNC: solve_equation_yes_no LINE: 114: Response is y
+FILE: main.c FUNC: read_abc LINE: 140: args -> 4
+FILE: main.c FUNC: read_abc LINE: 145: A -> 1
+FILE: main.c FUNC: read_abc LINE: 147: B -> -96.0770341101267
+FILE: main.c FUNC: read_abc LINE: 149: C -> 1670.88700914274
+FILE: main.c FUNC: read_abc LINE: 161: args -> 4  r -> 1 c -> |
+|
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of a is 1.000000 len-> 1
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 0
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 225: The input for a is 1 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of b is -96.077034 len-> 17
+FILE: validation.c FUNC: validate_float LINE: 145: array[0] -> - 
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 13
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 225: The input for b is -96.0770341101267 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of c is 1670.886963 len-> 16
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 11
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 225: The input for c is 1670.88700914274 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+FILE: validation.c FUNC: validation_floats LINE: 258: 1 1 1
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: quadFun.c FUNC: discrim LINE: 9: discrim -> 2547.248610
+FILE: quadFun.c FUNC: check_discrim LINE: 17: discrim -> 2547.248610
+FILE: quadFun.c FUNC: get_root_minus LINE: 41 root- -> 22.803380
+FILE: quadFun.c FUNC: get_root_plus LINE: 51 root+ -> 73.273654
+FILE: main.c FUNC: solve_equation_yes_no LINE: 104: response[0] -> y
+FILE: main.c FUNC: solve_equation_yes_no LINE: 114: Response is y
+FILE: main.c FUNC: read_abc LINE: 140: args -> 4
+FILE: main.c FUNC: read_abc LINE: 145: A -> 1
+FILE: main.c FUNC: read_abc LINE: 147: B -> -42.2348378266044
+FILE: main.c FUNC: read_abc LINE: 149: C -> -275.534754909517
+FILE: main.c FUNC: read_abc LINE: 161: args -> 4  r -> 1 c -> |
+|
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of a is 1.000000 len-> 1
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 0
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 225: The input for a is 1 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of b is -42.234837 len-> 17
+FILE: validation.c FUNC: validate_float LINE: 145: array[0] -> - 
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 13
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 225: The input for b is -42.2348378266044 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of c is -275.534760 len-> 17
+FILE: validation.c FUNC: validate_float LINE: 145: array[0] -> - 
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 12
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 225: The input for c is -275.534754909517 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+FILE: validation.c FUNC: validation_floats LINE: 258: 1 1 1
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: quadFun.c FUNC: discrim LINE: 9: discrim -> 2885.920459
+FILE: quadFun.c FUNC: check_discrim LINE: 17: discrim -> 2885.920459
+FILE: quadFun.c FUNC: get_root_minus LINE: 41 root- -> -5.742964
+FILE: quadFun.c FUNC: get_root_plus LINE: 51 root+ -> 47.977800
+FILE: main.c FUNC: solve_equation_yes_no LINE: 104: response[0] -> y
+FILE: main.c FUNC: solve_equation_yes_no LINE: 114: Response is y
+FILE: main.c FUNC: read_abc LINE: 140: args -> 4
+FILE: main.c FUNC: read_abc LINE: 145: A -> 1
+FILE: main.c FUNC: read_abc LINE: 147: B -> -128.481564177518
+FILE: main.c FUNC: read_abc LINE: 149: C -> 4055.41720906215
+FILE: main.c FUNC: read_abc LINE: 161: args -> 4  r -> 1 c -> |
+|
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of a is 1.000000 len-> 1
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 0
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 225: The input for a is 1 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of b is -128.481567 len-> 17
+FILE: validation.c FUNC: validate_float LINE: 145: array[0] -> - 
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 12
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 225: The input for b is -128.481564177518 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of c is 4055.417236 len-> 16
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 11
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 225: The input for c is 4055.41720906215 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+FILE: validation.c FUNC: validation_floats LINE: 258: 1 1 1
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: quadFun.c FUNC: discrim LINE: 9: discrim -> 285.844212
+FILE: quadFun.c FUNC: check_discrim LINE: 17: discrim -> 285.844212
+FILE: quadFun.c FUNC: get_root_minus LINE: 41 root- -> 55.787320
+FILE: quadFun.c FUNC: get_root_plus LINE: 51 root+ -> 72.694248
+FILE: main.c FUNC: solve_equation_yes_no LINE: 104: response[0] -> y
+FILE: main.c FUNC: solve_equation_yes_no LINE: 114: Response is y
+FILE: main.c FUNC: read_abc LINE: 140: args -> 4
+FILE: main.c FUNC: read_abc LINE: 145: A -> 1
+FILE: main.c FUNC: read_abc LINE: 147: B -> -79.7901536147517
+FILE: main.c FUNC: read_abc LINE: 149: C -> 1335.11296078436
+FILE: main.c FUNC: read_abc LINE: 161: args -> 4  r -> 1 c -> |
+|
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of a is 1.000000 len-> 1
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 0
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 225: The input for a is 1 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of b is -79.790154 len-> 17
+FILE: validation.c FUNC: validate_float LINE: 145: array[0] -> - 
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 13
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 225: The input for b is -79.7901536147517 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of c is 1335.112915 len-> 16
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 11
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 5
+FILE: validation.c FUNC: validate_float LINE: 225: The input for c is 1335.11296078436 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+FILE: validation.c FUNC: validation_floats LINE: 258: 1 1 1
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: quadFun.c FUNC: discrim LINE: 9: discrim -> 1026.016936
+FILE: quadFun.c FUNC: check_discrim LINE: 17: discrim -> 1026.016936
+FILE: quadFun.c FUNC: get_root_minus LINE: 41 root- -> 23.879327
+FILE: quadFun.c FUNC: get_root_plus LINE: 51 root+ -> 55.910826
+FILE: main.c FUNC: solve_equation_yes_no LINE: 104: response[0] -> y
+FILE: main.c FUNC: solve_equation_yes_no LINE: 114: Response is y
+FILE: main.c FUNC: read_abc LINE: 140: args -> 4
+FILE: main.c FUNC: read_abc LINE: 145: A -> 1
+FILE: main.c FUNC: read_abc LINE: 147: B -> -32.9722823019073
+FILE: main.c FUNC: read_abc LINE: 149: C -> 73.7163458150573
+FILE: main.c FUNC: read_abc LINE: 161: args -> 4  r -> 1 c -> |
+|
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of a is 1.000000 len-> 1
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 0
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 1
+FILE: validation.c FUNC: validate_float LINE: 225: The input for a is 1 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of b is -32.972282 len-> 17
+FILE: validation.c FUNC: validate_float LINE: 145: array[0] -> - 
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 1
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 13
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 4
+FILE: validation.c FUNC: validate_float LINE: 225: The input for b is -32.9722823019073 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+
+
+FILE: validation.c FUNC: validate_float LINE: 125: The float from the string is represented of c is 73.716347 len-> 16
+FILE: validation.c FUNC: validate_float LINE: 169: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 171: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 173: integer_count -> 3
+FILE: validation.c FUNC: validate_float LINE: 201: count_e -> 0
+FILE: validation.c FUNC: validate_float LINE: 203: sign -> 0
+FILE: validation.c FUNC: validate_float LINE: 205: decimals_count -> 13
+FILE: validation.c FUNC: validate_float LINE: 207: integer_count -> 3
+FILE: validation.c FUNC: validate_float LINE: 225: The input for c is 73.7163458150573 is valid.
+FILE: validation.c FUNC: validate_float LINE: 239: The return_value 1, 1 means OK
+FILE: validation.c FUNC: validation_floats LINE: 258: 1 1 1
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: validation.c LINE 95: rerr -> 2.22045e-15
+FILE: validation.c LINE 114: aerr -> 2.22045e-15
+FILE: quadFun.c FUNC: discrim LINE: 9: discrim -> 792.306020
+FILE: quadFun.c FUNC: check_discrim LINE: 17: discrim -> 792.306020
+FILE: quadFun.c FUNC: get_root_minus LINE: 41 root- -> 2.412176
+FILE: quadFun.c FUNC: get_root_plus LINE: 51 root+ -> 30.560107
 FILE: main.c FUNC: solve_equation_yes_no LINE: 104: response[0] -> n

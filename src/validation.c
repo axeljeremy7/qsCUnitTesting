@@ -181,6 +181,10 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
                 count_e++;
                 continue;
             }
+            else if (array[i] == '-' || array[i] == '+')
+            {
+                sign++;
+            }
             else if (array[i] < 48 || array[i] > 57)
             {
                 return_value = 4;
@@ -189,7 +193,7 @@ int validate_float(char *array, nummber_parts *n, FILE *fp, char id)
                 printf("The input for a is %s, which is invalid.\n", array);
                 break;
             }
-            if (count_e > 1)
+            if (count_e > 1 || sign > 2 )
             {
                 return_value = 5;
                 break;
