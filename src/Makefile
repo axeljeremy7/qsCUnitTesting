@@ -20,6 +20,18 @@ quadFun.o: include/header.h include/quadFun.h quadFun.c
 validation.o: include/header.h include/validation.h validation.c
 	${CC} -c ${CFLAGS} validation.c ${LDLIBS}
 
+main.o: include/main.h main.c
+	${CC} -c ${CFLAGS} main.c ${LDLIBS}
+
+newmain: main.o validation.o quadFun.o
+	${CC} main.o validation.o quadFun.o -o newmain ${LDLIBS}
+
+quadSolver:
+	./newmain 2> logs/user_logs.txt
+
+runv3:
+	./v3.sh	
+
 test.o: variables.h header.h validation.h quadFun.h test.h test.c
 	${CC} -c ${CFLAGS} test.c ${LDLIBS} ${CUNIT}
 
@@ -28,18 +40,6 @@ test: test.o quadFun.o validation.o
 
 qSolver: file_main.o quadFun.o validation.o 
 	${CC} file_main.o quadFun.o validation.o -o qSolver ${LDLIBS}
-
-main.o: include/main.h main.c
-	${CC} -c ${CFLAGS} main.c ${LDLIBS}
-
-newmain: main.o validation.o quadFun.o
-	${CC} main.o validation.o quadFun.o -o newmain ${LDLIBS}
-
-newrun:
-	./newmain 2> logs/user_logs.txt
-
-runv3:
-	./v3.sh	
 
 gene:
 	${CC} -c ${CFLAGS} gennum.c ${LDLIBS}

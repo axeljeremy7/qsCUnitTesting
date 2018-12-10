@@ -5,7 +5,7 @@ A = rep(1,10)
 B = -(a+b)
 C = a*b
 
-fileConn<-file("test.in.txt")
+fileConn<-file("test.in1.txt")
 txt = c()
 for (i in 1:10){
   txt = c (txt, "y")

@@ -1,5 +1,5 @@
 #!/bin/bash
 
 make clean
-make -B testroots
+make testroots
 make run2

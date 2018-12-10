@@ -1,5 +1,5 @@
 #!/bin/bash
 
 make clean
-make -B newmain
-make newrun
+make newmain
+make quadSolver
